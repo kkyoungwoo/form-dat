@@ -1,0 +1,202 @@
+.text_margin {
+  margin-right: 10px;
+}
+
+.agree_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px 0 10px;
+}
+
+.privacy_wrap {
+  width: 950px;
+}
+
+.privacy_wrap .Privacy_forms {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  -ms-grid-columns: 150px 1fr 150px 1fr;
+      grid-template-columns: 150px 1fr 150px 1fr;
+      grid-template-areas: "Privacy_groupname Privacy_groupname_text Privacy_name Privacy_name_text" "Privacy_phone Privacy_phone_text Privacy_position Privacy_position_text" "Privacy_number Privacy_number_text Privacy_email Privacy_email_text" "Privacy_address Privacy_address_script Privacy_address_script Privacy_address_script" "Privacy_address Privacy_address_text Privacy_address_text Privacy_address_text" "Privacy_list Privacy_list_text Privacy_list_text Privacy_list_text" "Privacy_day Privacy_day_box Privacy_day_box Privacy_day_box";
+  grid-gap: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-top: 1px solid #666666;
+  border-left: 1px solid #666666;
+}
+
+.privacy_wrap .Privacy_forms .Privacy_form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px 0 5px 10px;
+  border-right: 1px solid #666666;
+  border-bottom: 1px solid #666666;
+}
+
+.privacy_wrap .Privacy_forms .Privacy_form.Privacy_groupname {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: Privacy_groupname;
+}
+
+.privacy_wrap .Privacy_forms .Privacy_form.Privacy_groupname_text {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: Privacy_groupname_text;
+}
+
+.privacy_wrap .Privacy_forms .Privacy_form.Privacy_name {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: Privacy_name;
+}
+
+.privacy_wrap .Privacy_forms .Privacy_form.Privacy_name_text {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: Privacy_name_text;
+}
+
+.privacy_wrap .Privacy_forms .Privacy_form.Privacy_phone {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: Privacy_phone;
+}
+
+.privacy_wrap .Privacy_forms .Privacy_form.Privacy_phone_text {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: Privacy_phone_text;
+}
+
+.privacy_wrap .Privacy_forms .Privacy_form.Privacy_position {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: Privacy_position;
+}
+
+.privacy_wrap .Privacy_forms .Privacy_form.Privacy_position_text {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: Privacy_position_text;
+}
+
+.privacy_wrap .Privacy_forms .Privacy_form.Privacy_number {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: Privacy_number;
+}
+
+.privacy_wrap .Privacy_forms .Privacy_form.Privacy_number_text {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: Privacy_number_text;
+}
+
+.privacy_wrap .Privacy_forms .Privacy_form.Privacy_email {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: Privacy_email;
+}
+
+.privacy_wrap .Privacy_forms .Privacy_form.Privacy_email_text {
+  -ms-grid-row: 3;
+  -ms-grid-column: 4;
+  grid-area: Privacy_email_text;
+}
+
+.privacy_wrap .Privacy_forms .Privacy_form.Privacy_address {
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: Privacy_address;
+}
+
+.privacy_wrap .Privacy_forms .Privacy_form.Privacy_address_script {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: Privacy_address_script;
+}
+
+.privacy_wrap .Privacy_forms .Privacy_form.Privacy_address_text {
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: Privacy_address_text;
+}
+
+.privacy_wrap .Privacy_forms .Privacy_form.Privacy_list {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  grid-area: Privacy_list;
+}
+
+.privacy_wrap .Privacy_forms .Privacy_form.Privacy_list_text {
+  -ms-grid-row: 6;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: Privacy_list_text;
+}
+
+.privacy_wrap .Privacy_forms .Privacy_form.Privacy_day {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  grid-area: Privacy_day;
+}
+
+.privacy_wrap .Privacy_forms .Privacy_form.Privacy_day_box {
+  -ms-grid-row: 7;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: Privacy_day_box;
+  display: block;
+}
+
+.privacy_wrap .Privacy_forms .Privacy_form.Privacy_day_box > input {
+  margin: 8px;
+}
+
+.secces {
+  width: 150px;
+  height: 50px;
+  color: white;
+  background: #ff3300;
+  border-radius: 10px;
+  margin-right: 20px;
+  margin-top: 30px;
+  margin-left: 325px;
+  cursor: pointer;
+}
+
+.failure {
+  width: 100px;
+  height: 50px;
+  color: white;
+  background: #666666;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.failure a {
+  display: inline-block;
+  width: 100%;
+  padding: 7px 0;
+}
+/*# sourceMappingURL=observe.css.map */

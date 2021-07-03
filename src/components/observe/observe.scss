@@ -1,0 +1,144 @@
+.text_margin{
+    margin-right: 10px;
+}
+
+.agree_box{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px 0 10px;
+}
+
+.privacy_wrap{
+    width: 950px;
+    .Privacy_forms {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        grid-template-columns: 150px 1fr 150px 1fr;
+        grid-template-areas: "Privacy_groupname Privacy_groupname_text Privacy_name Privacy_name_text"
+            "Privacy_phone Privacy_phone_text Privacy_position Privacy_position_text"
+            "Privacy_number Privacy_number_text Privacy_email Privacy_email_text"
+            "Privacy_address Privacy_address_script Privacy_address_script Privacy_address_script"
+            "Privacy_address Privacy_address_text Privacy_address_text Privacy_address_text"
+            "Privacy_list Privacy_list_text Privacy_list_text Privacy_list_text"
+            "Privacy_day Privacy_day_box Privacy_day_box Privacy_day_box";
+        grid-gap: 0px;
+        box-sizing: border-box;
+        border-top: 1px solid #666666;
+        border-left: 1px solid #666666;
+
+        .Privacy_form{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 5px 0 5px 10px;
+            border-right: 1px solid #666666;
+            border-bottom: 1px solid #666666;
+        }
+
+        .Privacy_form.Privacy_groupname {
+            grid-area: Privacy_groupname;
+        }
+
+        .Privacy_form.Privacy_groupname_text {
+            grid-area: Privacy_groupname_text;
+        }
+
+        .Privacy_form.Privacy_name {
+            grid-area: Privacy_name;
+        }
+
+        .Privacy_form.Privacy_name_text {
+            grid-area: Privacy_name_text;
+        }
+
+        .Privacy_form.Privacy_phone {
+            grid-area: Privacy_phone;
+        }
+
+        .Privacy_form.Privacy_phone_text {
+            grid-area: Privacy_phone_text;
+        }
+
+        .Privacy_form.Privacy_position {
+            grid-area: Privacy_position;
+        }
+
+        .Privacy_form.Privacy_position_text {
+            grid-area: Privacy_position_text;
+        }
+
+        .Privacy_form.Privacy_number {
+            grid-area: Privacy_number;
+        }
+
+        .Privacy_form.Privacy_number_text {
+            grid-area: Privacy_number_text;
+        }
+
+        .Privacy_form.Privacy_email {
+            grid-area: Privacy_email;
+        }
+
+        .Privacy_form.Privacy_email_text {
+            grid-area: Privacy_email_text;
+        }
+
+        .Privacy_form.Privacy_address {
+            grid-area: Privacy_address;
+        }
+        .Privacy_form.Privacy_address_script {
+            grid-area: Privacy_address_script;
+        }
+        .Privacy_form.Privacy_address_text {
+            grid-area: Privacy_address_text;
+        }
+
+        .Privacy_form.Privacy_list {
+            grid-area: Privacy_list;
+        }
+
+        .Privacy_form.Privacy_list_text {
+            grid-area: Privacy_list_text;
+        }
+
+        .Privacy_form.Privacy_day {
+            grid-area: Privacy_day;
+        }
+
+        .Privacy_form.Privacy_day_box {
+            grid-area: Privacy_day_box;
+            display: block;
+            &>input{
+                margin: 8px;
+            }
+        }
+    }
+}
+
+    .secces {
+        width: 150px;
+        height: 50px;
+        color: white;
+        background: #ff3300;
+        border-radius: 10px;
+        margin-right: 20px;
+        margin-top: 30px;
+        margin-left: 325px;
+        cursor: pointer;
+    }
+
+    .failure {
+        width: 100px;
+        height: 50px;
+        color: white;
+        background: #666666;
+        border-radius: 10px;
+        cursor: pointer;
+        a{
+            display: inline-block;
+            width: 100%;
+            padding: 7px 0;
+        }
+    }

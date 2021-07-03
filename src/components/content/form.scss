@@ -1,0 +1,455 @@
+@mixin centerPosition{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title_color {
+    background: #f3f3f3;
+}
+.main_color {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e4f3dd;
+    padding: 5px;
+}
+
+.title_text{
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.fontsizeup{
+    font-size: 24px;
+}
+
+.form_wrap{
+    display: flex;
+    flex-direction: column;
+    width: 950px;
+    background: #ffffff;
+    .company_form {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas:    "company company_text boss boss_text "
+                                "address address_text address_text address_text"
+                                "manager manager_text compony_position compony_position_text"
+                                "phone phone_text email email_text"
+                                "website website_text website_text website_text"
+                                "Field Field_text Field_text Field_text"
+                                "item item_text item_text item_text"
+                                "banner banner_text banner_text banner_text";
+        grid-gap: 0px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        margin-bottom: 30px;
+        
+
+        nav {
+            @include centerPosition;
+            grid-area: nav;
+        }
+        
+        .form{
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+     
+        .form.company {
+            grid-area: company;
+        }
+        .form.company_text {
+            grid-area: company_text;
+        }
+     
+        .form.boss {
+            grid-area: boss;
+        }
+        .form.boss_text {
+            grid-area: boss_text;
+        }
+     
+        .form.address {
+            grid-area: address;
+        }
+        .form.address_text {
+            grid-area: address_text;
+        }
+
+        .form.manager {
+            grid-area: manager;
+        }
+        .form.manager_text {
+            grid-area: manager_text;
+        }
+     
+        .form.compony_position {
+            grid-area: compony_position;
+        }
+        .form.compony_position_text {
+            grid-area: compony_position_text;
+        }
+     
+        .form.phone {
+            grid-area: phone;
+        }
+        .form.phone_text {
+            grid-area: phone_text;
+        }
+
+        .form.email {
+            grid-area: email;
+        }
+        .form.email_text {
+            grid-area: email_text;
+        }
+     
+        .form.website {
+            grid-area: website;
+        }
+        .form.website_text {
+            grid-area: website_text;
+        }
+     
+        .form.Field {
+            grid-area: Field;
+        }
+        .form.Field_text {
+            grid-area: Field_text;
+        }
+
+        .form.item {
+            grid-area: item;
+        }
+        .form.item_text {
+            grid-area: item_text;
+        }
+
+        .form.banner {
+            grid-area: banner;
+        }
+        .form.banner_text {
+            grid-area: banner_text;
+        }
+     
+    }
+    .business_Registration{
+        display: grid;
+        width: 100%;
+        height: 100%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "number number_input"
+                                "file file_input";
+        grid-gap: 0px;
+        margin: 20px 0;
+        border-top: 1px solid #c0c0c0;
+        border-left: 1px solid #c0c0c0;
+
+        .Registration {
+            border-right: 1px solid #c0c0c0;
+            border-bottom: 1px solid #c0c0c0;
+            padding: 5px;
+        }
+
+        .Registration.number {
+            grid-area: number;
+        }
+        .Registration.number_input {
+            grid-area: number_input;
+        }
+     
+        .Registration.file {
+            grid-area: file;
+        }
+        .Registration.file_input {
+            grid-area: file_input;
+        }
+    }
+    .application{
+        display: grid;
+        width: 100%;
+        height: 100%;
+        grid-template-columns: .5fr 1.8fr .4fr 1.2fr 1.3fr;
+        grid-template-rows: 1.7fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1.3fr 1.3fr 1.3fr;
+        grid-template-areas:    "division division quantity quantity unit_price price"
+                                "boothname independent independent_ea independent_ea independent_ea_support independent_ea_support_total"
+                                "boothname nomal nomal_ea nomal_ea nomal_ea_support nomal_ea_support_total"
+                                "boothname premium premium_ea premium_ea premium_ea_support premium_ea_support_total"
+                                "elec one_phase one_phase_kw one_phase_kw one_phase_kw_won one_phase_kw_total"
+                                "elec two_phase two_phase_kw two_phase_kw two_phase_kw_won two_phase_kw_total"
+                                "elec three_phase three_phase_kw three_phase_kw three_phase_kw_won three_phase_kw_total"
+                                "tell ko ko_unit ko_unit ko_unit_won ko_unit_total"
+                                "tell global global_unit global_unit global_unit_won global_unit_total"
+                                "water water water_place water_place water_won water_place_total"
+                                "air air air_place air_place air_won air_place_total "
+                                "lan lan lan_port lan_port lan_port_won lan_port_total"
+                                "subtotal subtotal subtotal_total subtotal_total subtotal_total subtotal_total"
+                                "vat vat vat_total vat_total vat_total vat_total"
+                                "total total total_end total_end total_end total_end"
+                                "atc atc atc_text atc_text atc_text atc_text";
+
+        grid-gap: 0px;
+        border-top: 1px solid #c0c0c0;
+        border-left: 1px solid #c0c0c0;
+        background: white;
+
+        .booth {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            border-bottom: 1px solid #c0c0c0;
+            border-right: 1px solid #c0c0c0;
+            box-sizing: border-box;
+            padding: 5px;
+        }
+
+        .booth.sub_color {
+            padding-left: 18px;
+        }
+
+        .booth.division {
+            @include centerPosition;
+            grid-area: division;
+        }
+
+        .booth.quantity {
+            @include centerPosition;
+            grid-area: quantity;
+        }
+        .booth.unit_price {
+            @include centerPosition;
+            grid-area: unit_price;
+        }
+        .booth.price {
+            @include centerPosition;
+            grid-area: price;
+        }
+        //
+        .booth.boothname {
+            @include centerPosition;
+            grid-area: boothname;
+        }
+        .booth.independent {
+            grid-area: independent;
+        }
+        .booth.nomal {
+            grid-area: nomal;
+        }
+        .booth.premium {
+            grid-area: premium;
+        }
+        //
+        .booth.elec {
+            @include centerPosition;
+            grid-area: elec;
+        }
+        .booth.one_phase {
+            grid-area: one_phase;
+        }
+        .booth.two_phase {
+            grid-area: two_phase;
+        }
+        .booth.three_phase {
+            grid-area: three_phase;
+        }
+        //
+        .booth.tell {
+            @include centerPosition;
+            grid-area: tell;
+        }
+        .booth.ko {
+            grid-area: ko;
+        }
+        .booth.global {
+            grid-area: global;
+        }
+        //
+        .booth.water {
+            grid-area: water;
+        }
+        .booth.air {
+            grid-area: air;
+        }
+        .booth.lan {
+            grid-area: lan;
+        }
+        //
+        .booth.independent_ea {
+            grid-area: independent_ea;
+        }
+        .booth.nomal_ea {
+            grid-area: nomal_ea;
+        }
+        .booth.premium_ea {
+            grid-area: premium_ea;
+        }
+        .booth.one_phase_kw {
+            grid-area: one_phase_kw;
+        }
+        .booth.two_phase_kw {
+            grid-area: two_phase_kw;
+        }
+        .booth.three_phase_kw {
+            grid-area: three_phase_kw;
+        }
+        .booth.ko_unit {
+            grid-area: ko_unit;
+        }
+        .booth.global_unit {
+            grid-area: global_unit;
+        }
+        .booth.water_place {
+            grid-area: water_place;
+        }
+        .booth.air_place {
+            grid-area: air_place;
+        }
+        .booth.lan_port {
+            grid-area: lan_port;
+        }
+        .booth.water_won {
+            grid-area: water_won;
+        }
+        .booth.one_phase_kw_won {
+            grid-area: one_phase_kw_won;
+        }
+        .booth.two_phase_kw_won {
+            grid-area: two_phase_kw_won;
+        }
+        .booth.three_phase_kw_won {
+            grid-area: three_phase_kw_won;
+        }
+        .booth.ko_unit_won {
+            grid-area: ko_unit_won;
+        }
+        .booth.global_unit_won {
+            grid-area: global_unit_won;
+        }
+        .booth.air_won {
+            grid-area: air_won;
+        }
+        .booth.air_won {
+            grid-area: air_won;
+        }
+        .booth.lan_port_won{
+            grid-area: lan_port_won;
+        }
+        .booth.independent_ea_support {
+            grid-area: independent_ea_support;
+        }
+        .booth.nomal_ea_support {
+            grid-area: nomal_ea_support;
+        }
+        .booth.premium_ea_support {
+            grid-area: premium_ea_support;
+        }
+        //
+        .booth.subtotal {
+            grid-area: subtotal;
+        }
+        .booth.subtotal_total {
+            grid-area: subtotal_total;
+        }
+        .booth.vat {
+            grid-area: vat;
+        }
+        .booth.vat_total {
+            grid-area: vat_total;
+        }
+        .booth.total {
+            grid-area: total;
+        }
+        .booth.total_end {
+            grid-area: total_end;
+        }
+        //
+        .booth.atc {
+            grid-area: atc;
+        }
+        .booth.atc_text {
+            grid-area: atc_text;
+        }
+        //
+        .booth.independent_ea_support_total {
+            grid-area: independent_ea_support_total;
+        }
+        .booth.nomal_ea_support_total {
+            grid-area: nomal_ea_support_total;
+        }
+        .booth.premium_ea_support_total {
+            grid-area: premium_ea_support_total;
+        }
+
+        .booth.one_phase_kw_total {
+            grid-area: one_phase_kw_total;
+        }
+        .booth.two_phase_kw_total {
+            grid-area: two_phase_kw_total;
+        }
+        .booth.three_phase_kw_total {
+            grid-area: three_phase_kw_total;
+        }
+
+        .booth.ko_unit_total {
+            grid-area: ko_unit_total;
+        }
+        .booth.global_unit_total {
+            grid-area: global_unit_total;
+        }
+
+        .booth.water_place_total {
+            grid-area: water_place_total;
+        }
+        .booth.air_place_total {
+            grid-area: air_place_total;
+        }
+        .booth.lan_port_total {
+            grid-area: lan_port_total;
+        }
+
+        //
+        .booth>input {
+            width: 130px;
+            margin: 0 5px;
+        }
+        
+    }
+    .form>input {
+        margin: 5px;
+    }
+    .submit_btn {
+        width: 150px;
+        height: 32px;
+        background: #007ce2;
+        border: none;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 50px;
+        margin-left: 322.5px;
+    }
+
+    .cancle_btn {
+        width: 150px;
+        height: 32px;
+        background: #bbbbbb;
+        border: none;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        margin-left: 5px;
+        a{
+            display: inline-block;
+            width: 100%;
+            padding: 7px 0;
+        }
+    }
+}

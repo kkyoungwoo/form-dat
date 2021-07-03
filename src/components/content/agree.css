@@ -1,0 +1,47 @@
+.agreepage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 950px;
+  padding-bottom: 12.5px;
+  border-bottom: 1px solid #c0c0c0;
+  margin: 0 auto;
+}
+
+.agreepage .agreetext {
+  width: 893px;
+  height: 400px;
+  overflow: auto;
+  padding: 27.5px;
+  border: 1px solid #c0c0c0;
+}
+
+.agreepage .agreechackbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 950px;
+  height: 45px;
+  background: #c0c0c0;
+}
+
+.agreepage .agreechackbox .input_chack {
+  margin-right: 10px;
+}
+/*# sourceMappingURL=agree.css.map */

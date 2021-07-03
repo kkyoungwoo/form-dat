@@ -1,0 +1,254 @@
+.individual_componets{
+    width: 950px;
+
+    .kakaomap.none{
+        display:none;
+        position: absolute;
+        left: 193px;
+        top:310px;
+        background: #c9c9c9;
+    }
+
+    .kakaomap.block{
+        display:block;
+        position: absolute;
+        left: 193px;
+        top:310px;
+        background: #c9c9c9;
+    }
+
+    .individual_wrap {
+        .title{
+            border-right: 1px solid #666666;
+            font-weight: bold;
+        }
+        display: grid;
+        width: 100%;
+        height: 100%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:    "individual_name individual_name"
+                                "individual_phone individual_phone"
+                                "individual_address individual_address"
+                                "individual_email individual_email"
+                                "individual_company individual_positon"
+                                "individual_gender individual_gender"
+                                "individual_age individual_age"
+                                "individual_class individual_class";
+        grid-gap: 0px;
+        box-sizing: border-box;
+        border-top: 1px solid #666666;
+        border-left: 1px solid #666666;
+        .individual{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            border-right: 1px solid #666666;
+            border-bottom: 1px solid #666666;
+            min-height: 40px;
+            
+            &>div{
+                display: flex;
+                align-items: center;
+                padding-left: 10px;
+            }
+            &>:first-child {
+                height: 100%;
+                width: 150px;
+                background: #c0c0c0;
+            }
+            &>:last-child {
+                display: flex;
+                align-items: center;
+                height: 100%;
+                background: white;
+            }
+
+            .text{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+        }
+        .individual.name {
+            grid-area: individual_name;
+        }
+        .individual.phone {
+            grid-area: individual_phone;
+        }
+        .individual.address {
+            grid-area: individual_address;
+            display: flex;
+            .text{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                height: 70px;
+                padding: 10px 0 10px;
+            }
+        }
+        .individual.email {
+            grid-area: individual_email;
+        }
+        .individual.positon {
+            grid-area: individual_positon;
+        }
+        .individual.gender {
+            grid-area: individual_gender;
+            .text{
+                input:last-child{
+                    margin-left: 20px;
+                }
+            }
+        }
+        .individual.age {
+            grid-area: individual_age;
+            display: flex;
+            align-items: center;
+            height: 100px;
+            .text{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-areas:"elementary middles two three"
+                "four five six seven"
+                "notice notice notice notice";
+                height: 80px;
+                width: calc(100% - 200px);
+                box-sizing: border-box;
+                align-items: center;
+                grid-gap: 10px;
+                .elementary {
+                    grid-area: elementary;
+                }
+                .middles {
+                    grid-area: middles;
+                }
+                .two {
+                    grid-area: two;
+                }
+                .three {
+                    grid-area: three;
+                }
+                .four {
+                    grid-area: four;
+                }
+                .five {
+                    grid-area: five;
+                }
+                .six {
+                    grid-area: six;
+                }
+                .seven {
+                    grid-area: seven;
+                }
+                .notice {
+                    grid-area: notice;
+                }
+            }
+        }
+        .individual.class {
+            grid-area: individual_class;
+            .text {
+                input:last-child {
+                    margin-left: 20px;
+                }
+            }
+        }
+        margin-bottom: 60px;
+    }
+
+    .sub_individual {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        grid-template-columns: 1fr;
+        grid-template-areas:"individual_company"
+                            "individual_purpose"
+                            "individual_pathway"
+                            "individual_comInterestpany";
+        grid-gap: 0px;
+        box-sizing: border-box;
+        border-top: 1px solid #666666;
+        border-left: 1px solid #666666;
+
+        .title {
+            font-weight: bold;
+        }
+
+        .sub_individuals {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            border-right: 1px solid #666666;
+            border-bottom: 1px solid #666666;
+            min-height: 120px;
+
+            &>div {
+                display: flex;
+                align-items: center;
+                padding-left: 10px;
+            }
+
+            &>:first-child {
+                height: 100%;
+                width: 150px;
+                background: #c0c0c0;
+            }
+            &>:last-child{
+                display: block;
+                justify-self: center;
+                align-items: center;
+                background: white;
+                .form_box {
+                    display: flex;
+                    justify-content: start;
+                    input{
+                        margin-right: 10px;
+                    }
+                    label{
+                        width: 300px;
+                    }
+                }
+            }
+        }
+        .sub_individual.company {
+            grid-area: individual_company;
+        }
+        .sub_individual.purpose {
+            grid-area: individual_purpose;
+        }
+        .sub_individual.pathway {
+            grid-area: individual_pathway;
+        }
+        .sub_individual.comInterestpany {
+            grid-area: individual_comInterestpany;
+        }
+    }
+    .submit_btn {
+        width: 150px;
+        height: 32px;
+        background: #007ce2;
+        border: none;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 50px;
+        margin-left: 322.5px;
+    }
+
+    .cancle_btn {
+        width: 150px;
+        height: 32px;
+        background: #bbbbbb;
+        border: none;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        margin-left: 5px;
+        a{
+            display: inline-block;
+            width: 100%;
+            padding: 7px 0;
+        }
+    }
+}

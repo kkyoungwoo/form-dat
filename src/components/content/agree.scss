@@ -1,0 +1,28 @@
+.agreepage{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 950px;
+        padding-bottom: 12.5px;
+        border-bottom: 1px solid #c0c0c0;
+        margin: 0 auto;
+    .agreetext{
+        width: 893px;
+        height: 400px;
+        overflow: auto;
+        padding: 27.5px;
+        border: 1px solid #c0c0c0;
+    }
+    .agreechackbox{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 950px;
+        height: 45px;
+        background: #c0c0c0;
+        .input_chack{
+            margin-right: 10px;
+        }
+    }
+}
