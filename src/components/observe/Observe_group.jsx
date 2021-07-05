@@ -125,16 +125,16 @@ function Observe_group(props) {
                 <input className="displaynone" type="email" name="user_email" />
                 <label className="displaynone">Message</label>
                 <textarea className="displaynone" name="message" readOnly value={
-                    " 단체명 :"+groupName+
-                    " , 담당자성명 :"+name+
-                    " , 담당자연락처 :"+phone+
-                    " , 직위 :"+position+
-                    " , 담당자휴대전화 :"+number+
-                    " , 이메일 :"+email+
-                    " , 주소 :"+fullLookAddress+
-                    " , 상세주소 :"+address+
-                    " , 참관객 명단 :"+list+
-                    " , 참관예정일자 :"+day+days+dayss
+                    "단체명 :"+groupName+
+                    "\n담당자성명 :"+name+
+                    "\n담당자연락처 :"+phone+
+                    "\n직위 :"+position+
+                    "\n담당자휴대전화 :"+number+
+                    "\n이메일 :"+email+
+                    "\n주소 :"+fullLookAddress+
+                    "\n상세주소 :"+address+
+                    "\n참관객 명단 :"+list+
+                    "\n참관예정일자 :"+day+days+dayss
                 }/>
             <div className="title_text fontsizeup">단체 온라인 참관신청</div>
             {address}

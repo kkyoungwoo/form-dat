@@ -123,6 +123,14 @@ function Form(props) {
               console.log(error.text);
           });
       }
+
+      const plusNumFile = plusNum.map((item,idx)=>{
+          const plusId = "plusNumItem"+item
+          console.log(plusId)
+          return(
+              <div>asd</div>
+          )
+      })
       
     return (
         <div className="form_wrap contact-form">
@@ -135,41 +143,40 @@ function Form(props) {
                 <label className="displaynone" >Message</label>
                 <textarea className="displaynone" name="message" readOnly value={
                     " 회사명 :"+company+
-                    " , 대표자명 :"+boss+
-                    " , 주소 :"+address+
-                    " , 담당자명 :"+compmanager+
-                    " , 부서(직위) :"+componyPosition+
-                    " , 연락처 :"+phone+
-                    " , E-mail :"+email+
-                    " , 홈페이지 주소 :"+webSite+
+                    "\n대표자명 :"+boss+
+                    "\n주소 :"+address+
+                    "\n담당자명 :"+compmanager+
+                    "\n부서(직위) :"+componyPosition+
+                    "\n연락처 :"+phone+
+                    "\nE-mail :"+email+
+                    "\n홈페이지 주소 :"+webSite+
 
-                    " , 참가전시분야 :"+field+
-                    " , 기타 :"+fildetc+
+                    "\n\n참가전시분야 :"+field+
+                    "\n기타 :"+fildetc+
                     //산림소재산업(목재,목조건축,목제품,임산물)
                     //신재생 에너지(바이오 매스, 펠릿)
                     //친환경(R&D,산지관리,환경,스마트 모빌리티)
                     //여가·레포츠(숲 체험, 산림레포츠)
-                    " , 주요 전시품목 :"+item+
-                    " , 상호명(현수막) :"+banner+
-                    " , 사업자등록번호 :"+compNumber+
+                    "\n주요 전시품목 :"+item+
+                    "\n상호명(현수막) :"+banner+
+                    "\n사업자등록번호 :"+compNumber+
 
-                    "독립부스 :"+phBoothOne+
-                    " 개, 기본부스 :"+phBoothTwo+
-                    " 개, 프리미엄부스 :"+phBoothThree+
-                    " 개, 단상220v :"+phEvOne+
-                    " KW, 삼상220v :"+phEvTwo+
-                    " KW, 삼상380v :"+PhEvThree+
-                    " KW, 국내 :"+phKo+
-                    " 대, 국제 :"+phGlo+
-                    " 대, 급배수 :"+phWater+
-                    " 개소, 압축공기 :"+phAir+
-                    " 개소, 랜 :"+phLan+
-                    " PORT, 소계 :"+phSubTotal+
-                    " 원, 부가세 :"+phVat+
-                    " 원, 합계 :"+phTotal+
-                    " 원, 부가항목 외 기타사항 "+boothEtc +
-
-                    " 출입증 신청 "+boothPlus
+                    "\n\n독립부스 :"+phBoothOne+" 개"+
+                    "\n기본부스 :"+phBoothTwo+" 개"+
+                    "\n프리미엄부스 :"+phBoothThree+" 개"+
+                    "\n단상220v :"+phEvOne+" KW"+
+                    "\n삼상220v :"+phEvTwo+" KW"+
+                    "\n삼상380v :"+PhEvThree+" KW"+
+                    "\n국내 :"+phKo+" 대"+
+                    "\n국제 :"+phGlo+" 대"+
+                    "\n급배수 :"+phWater+" 개소"+
+                    "\n압축공기 :"+phAir+" 개소"+
+                    "\n랜 :"+phLan+" PORT"+
+                    "\n\n소계 :"+phSubTotal+" 원"+
+                    "\n부가세 :"+phVat+" 원"+
+                    "\n합계 :"+phTotal+" 원"+
+                    "\n부가항목 외 기타사항 "+boothEtc +
+                    "\n\n출입증 신청 "+boothPlus
                 }/>
             <nav className="title_text">주최측에서 제공하는 <span>[참가업체 메뉴얼]</span>을 반드시 확인하신 후 참가 신청해주시기 바랍니다.</nav>
             <div className="company_form">
@@ -380,7 +387,7 @@ function Form(props) {
                             <h4>번호</h4>
                             {plusNum.map((item,idx) => {
                                 return(
-                                    <div key={item}>{idx + 1}</div>
+                                    <div key={item} className={idx}>{idx + 1}</div>
                                 )
                             })}
                         </div>

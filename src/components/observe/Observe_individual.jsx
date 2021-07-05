@@ -167,152 +167,152 @@ function Observe_individual(props) {
 
     const ismeClickA = useCallback(() =>{
         setIsMeA(!isMeA)
-        isMeA ? setA(" 제조업체") : setA("")
+        isMeA ? setA(" 제조업체 ,") : setA("")
     },[isMeA])
 
     const ismeClickB = useCallback(() =>{
         setIsMeB(!isMeB)
-        isMeB ? setB(" 유통업체") : setB("")
+        isMeB ? setB(" 유통업체 ,") : setB("")
     },[isMeB])
 
     const ismeClickC = useCallback(() =>{
         setIsMeC(!isMeC)
-        isMeC ? setC(" 관공서/단체/협회") : setC("")
+        isMeC ? setC(" 관공서/단체/협회 ,") : setC("")
     },[isMeC])
 
     const ismeClickD = useCallback(() =>{
         setIsMeD(!isMeD)
-        isMeD ? setD(" 연구기관") : setD("")
+        isMeD ? setD(" 연구기관 ,") : setD("")
     },[isMeD])
 
     const ismeClickE = useCallback(() =>{
         setIsMeE(!isMeE)
-        isMeE ? setE(" 방송/신문") : setE("")
+        isMeE ? setE(" 방송/신문 ,") : setE("")
     },[isMeE])
 
     const ismeClickF = useCallback(() =>{
         setIsMeF(!isMeF)
-        isMeF ? setF(" 무역") : setF("")
+        isMeF ? setF(" 무역 ,") : setF("")
     },[isMeF])
 
     const ismeClickG = useCallback(() =>{
         setIsMeG(!isMeG)
-        isMeG ? setG(" 병원/의원") : setG("")
+        isMeG ? setG(" 병원/의원 ,") : setG("")
     },[isMeG])
 
     const ismeClickH = useCallback(() =>{
         setIsMeH(!isMeH)
-        isMeH ? setH(" 기타") : setH("")
+        isMeH ? setH(" 기타 ,") : setH("")
     },[isMeH])
 
     const ismeClickI = useCallback(() =>{
         setIsMeI(!isMeI)
-        isMeI ? setI(" 제품/기술 구매") : setI("")
+        isMeI ? setI(" 제품/기술 구매 ,") : setI("")
     },[isMeI])
 
     const ismeClickJ = useCallback(() =>{
         setIsMeJ(!isMeJ)
-        isMeJ ? setJ(" 자료수집") : setJ("")
+        isMeJ ? setJ(" 자료수집 ,") : setJ("")
     },[isMeJ])
 
     const ismeClickK = useCallback(() =>{
         setIsMeK(!isMeK)
-        isMeK ? setK(" 시장동향파악") : setK("")
+        isMeK ? setK(" 시장동향파악 ,") : setK("")
     },[isMeK])
 
     const ismeClickL = useCallback(() =>{
         setIsMeL(!isMeL)
-        isMeL ? setL(" 연구") : setL("")
+        isMeL ? setL(" 연구 ,") : setL("")
     },[isMeL])
 
     const ismeClickM = useCallback(() =>{
         setIsMeM(!isMeM)
-        isMeM ? setM(" 협력,투자 및 제휴업체 물색") : setM("")
+        isMeM ? setM(" 협력,투자 및 제휴업체 물색 ,") : setM("")
     },[isMeM])
 
     const ismeClickN = useCallback(() =>{
         setIsMeN(!isMeN)
-        isMeN ? setN(" 기타일반관람") : setN("")
+        isMeN ? setN(" 기타일반관람 ,") : setN("")
     },[isMeN])
 
     const ismeClickO = useCallback(() =>{
         setIsMeO(!isMeO)
-        isMeO ? setO(" 차기전시참가여부 결정") : setO("")
+        isMeO ? setO(" 차기전시참가여부 결정 ,") : setO("")
     },[isMeO])
 
     const ismeClickP = useCallback(() =>{
         setIsMeP(!isMeP)
-        isMeP ? setP(" TV,신문 등 언론 매체") : setP("")
+        isMeP ? setP(" TV,신문 등 언론 매체 ,") : setP("")
     },[isMeP])
 
     const ismeClickQ = useCallback(() =>{
         setIsMeQ(!isMeQ)
-        isMeQ ? setQ(" 관련전문 잡지") : setQ("")
+        isMeQ ? setQ(" 관련전문 잡지 ,") : setQ("")
     },[isMeQ])
 
     const ismeClickR = useCallback(() =>{
         setIsMeR(!isMeR)
-        isMeR ? setR(" 인터넷") : setR("")
+        isMeR ? setR(" 인터넷 ,") : setR("")
     },[isMeR])
 
     const ismeClickS = useCallback(() =>{
         setIsMeS(!isMeS)
-        isMeS ? setS(" 관련기관 및 단체") : setS("")
+        isMeS ? setS(" 관련기관 및 단체 ,") : setS("")
     },[isMeS])
 
     const ismeClickT = useCallback(() =>{
         setIsMeT(!isMeT)
-        isMeT ? setT(" 참관안내서") : setT("")
+        isMeT ? setT(" 참관안내서 ,") : setT("")
     },[isMeT])
     
     const ismeClickU = useCallback(() =>{
         setIsMeU(!isMeU)
-        isMeU ? setU(" 외부광고") : setU("")
+        isMeU ? setU(" 외부광고 ,") : setU("")
     },[isMeU])
 
     const ismeClickV = useCallback(() =>{
         setIsMeV(!isMeV)
-        isMeV ? setV(" 기타") : setV("")
+        isMeV ? setV(" 기타 ,") : setV("")
     },[isMeV])
 
     const ismeClickW = useCallback(() =>{
         setIsMeW(!isMeW)
-        isMeW ? setW(" 목재건축") : setW("")
+        isMeW ? setW(" 목재건축 ,") : setW("")
     },[isMeW])
 
     const ismeClickX = useCallback(() =>{
         setIsMeX(!isMeX)
-        isMeX ? setX(" 목제품") : setX("")
+        isMeX ? setX(" 목제품 ,") : setX("")
     },[isMeX])
 
     const ismeClickY = useCallback(() =>{
         setIsMeY(!isMeY)
-        isMeY ? setY(" 임산물") : setY("")
+        isMeY ? setY(" 임산물 ,") : setY("")
     },[isMeY])
 
     const ismeClickZ = useCallback(() =>{
         setIsMeZ(!isMeZ)
-        isMeZ ? setZ(" 신재생에너지") : setZ("")
+        isMeZ ? setZ(" 신재생에너지 ,") : setZ("")
     },[isMeZ])
 
     const ismeClickAA = useCallback(() =>{
         setIsMeAA(!isMeAA)
-        isMeAA ? setAA(" 산림(숲)관리") : setAA("")
+        isMeAA ? setAA(" 산림(숲)관리 ,") : setAA("")
     },[isMeAA])
 
     const ismeClickBB = useCallback(() =>{
         setIsMeBB(!isMeBB)
-        isMeBB ? setBB(" 산림레포츠") : setBB("")
+        isMeBB ? setBB(" 산림레포츠 ,") : setBB("")
     },[isMeBB])
 
     const ismeClickCC = useCallback(() =>{
         setIsMeCC(!isMeCC)
-        isMeCC ? setCC(" 스마트모빌리티") : setCC("")
+        isMeCC ? setCC(" 스마트모빌리티 ,") : setCC("")
     },[isMeCC])
 
     const ismeClickDD = useCallback(() =>{
         setIsMeDD(!isMeDD)
-        isMeDD ? setDD(" 기타") : setDD("")
+        isMeDD ? setDD(" 기타 ,") : setDD("")
     },[isMeDD])
 
     //kakao
@@ -356,20 +356,21 @@ function Observe_individual(props) {
                 <input className="displaynone" type="email" name="user_email" />
                 <label className="displaynone">Message</label>
                 <textarea className="displaynone" name="message" readOnly value={
-                    " 이름 :"+name+
-                    " , 휴대폰 :"+phone+
-                    " , 주소 :"+fullLookAddress+
-                    " , 상세주소 :"+addresss+
-                    " , 이메일 :"+email+
-                    " , 회사명 :"+company+
-                    " , 부서/직위 :"+positon+
-                    " , 성별 :"+gender+
-                    " , 연령대 :"+age+
-                    " , 등록분류 :"+classNum+
-                    " , 회사분류 :"+a+b+c+d+e+f+g+h+
-                    " , 관람목적 :"+i+j+k+l+m+n+o+
-                    " , 전시회 인지경로 :"+p+q+r+s+t+u+v+
-                    " , 관심분야 :"+w+x+y+z+aa+bb+cc+dd
+                    "이름 :"+name+
+                    "\n휴대폰 :"+phone+
+                    "\n주소 :"+fullLookAddress+
+                    "\n상세주소 :"+addresss+
+                    "\n이메일 :"+email+
+                    "\n회사명 :"+company+
+                    "\n부서/직위 :"+positon+
+                    "\n성별 :"+gender+
+                    "\n연령대 :"+age+
+                    "\n등록분류 :"+classNum+
+
+                    "\n\n회사분류 :"+a+b+c+d+e+f+g+h+
+                    "\n관람목적 :"+i+j+k+l+m+n+o+
+                    "\n전시회 인지경로 :"+p+q+r+s+t+u+v+
+                    "\n관심분야 :"+w+x+y+z+aa+bb+cc+dd
                     //" , 제조업체 :"+a+
                     //" , 유통업체 :"+b+
                     //" , 관공서/단체/협회 :"+c+
