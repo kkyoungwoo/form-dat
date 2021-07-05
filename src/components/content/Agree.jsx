@@ -79,8 +79,8 @@ function Agree(props) {
                 <br />본 참가규정의 해석에 관하여 주최자와 전시자간에 발생하는 쌍방 간의 권리, 의무에 관한 분쟁은 대구지방관할 법원의 판정을 따른다.
             </div>
             <div className="agreechackbox">
-                <span className="input_chack"><input type="checkbox" onClick={isToggleBtn}/></span>
-                <span className="input_chacktext">위의 참가규정에 동의합니다.</span>
+                <span className="input_chack"><input id="chack" type="checkbox" onClick={isToggleBtn}/></span>
+                <label for="chack" className="input_chacktext">위의 참가규정에 동의합니다.</label>
             </div>
             <Link to ={isJoin}><button className="attend" onClick={joinForm}>
                 온라인 참가신청

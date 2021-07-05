@@ -45,11 +45,13 @@
             border-right: 1px solid #666666;
             border-bottom: 1px solid #666666;
             min-height: 40px;
+            padding: 7.5px 0;
             
             &>div{
                 display: flex;
                 align-items: center;
                 padding-left: 10px;
+                padding: 10px 0 5px 10px ;
             }
             &>:first-child {
                 height: 100%;
@@ -83,8 +85,8 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: flex-start;
-                height: 70px;
-                padding: 10px 0 10px;
+                height: 100%;
+                padding-top: 0px;
             }
         }
         .individual.email {
@@ -109,14 +111,15 @@
             .text{
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
                 grid-template-areas:"elementary middles two three"
                 "four five six seven"
                 "notice notice notice notice";
-                height: 80px;
+                height: 100%;
                 width: calc(100% - 200px);
                 box-sizing: border-box;
                 align-items: center;
-                grid-gap: 10px;
+                grid-gap: 5px;
                 .elementary {
                     grid-area: elementary;
                 }
@@ -202,6 +205,8 @@
                 .form_box {
                     display: flex;
                     justify-content: start;
+                    align-items: center;
+                    margin-bottom: 5px;
                     input{
                         margin-right: 10px;
                     }

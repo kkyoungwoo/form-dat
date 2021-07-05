@@ -13,8 +13,6 @@
       -ms-flex-align: center;
           align-items: center;
   width: 950px;
-  padding-bottom: 12.5px;
-  border-bottom: 1px solid #c0c0c0;
   margin: 0 auto;
 }
 
@@ -38,7 +36,7 @@
           align-items: center;
   width: 950px;
   height: 45px;
-  background: #c0c0c0;
+  background: #f1f1f1;
 }
 
 .agreepage .agreechackbox .input_chack {

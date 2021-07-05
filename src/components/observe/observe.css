@@ -44,9 +44,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 5px 0 5px 10px;
+  padding: 5px 0 5px 15px;
   border-right: 1px solid #666666;
   border-bottom: 1px solid #666666;
+  padding: 10px;
 }
 
 .privacy_wrap .Privacy_forms .Privacy_form.Privacy_groupname {
@@ -176,22 +177,25 @@
 .secces {
   width: 150px;
   height: 50px;
-  color: white;
-  background: #ff3300;
+  color: black;
+  background: #e2f0d9;
   border-radius: 10px;
   margin-right: 20px;
   margin-top: 30px;
   margin-left: 325px;
   cursor: pointer;
+  border: 1px solid black;
 }
 
 .failure {
   width: 100px;
   height: 50px;
   color: white;
-  background: #666666;
+  background: #f1f1f1;
   border-radius: 10px;
+  border: 1px solid black;
   cursor: pointer;
+  margin-bottom: 150px;
 }
 
 .failure a {

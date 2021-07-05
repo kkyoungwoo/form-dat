@@ -52,6 +52,7 @@
   border-right: 1px solid #666666;
   border-bottom: 1px solid #666666;
   min-height: 40px;
+  padding: 7.5px 0;
 }
 
 .individual_componets .individual_wrap .individual > div {
@@ -62,6 +63,7 @@
       -ms-flex-align: center;
           align-items: center;
   padding-left: 10px;
+  padding: 10px 0 5px 10px;
 }
 
 .individual_componets .individual_wrap .individual > :first-child {
@@ -131,8 +133,8 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  height: 70px;
-  padding: 10px 0 10px;
+  height: 100%;
+  padding-top: 0px;
 }
 
 .individual_componets .individual_wrap .individual.email {
@@ -178,15 +180,17 @@
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
       grid-template-areas: "elementary middles two three" "four five six seven" "notice notice notice notice";
-  height: 80px;
+  height: 100%;
   width: calc(100% - 200px);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  grid-gap: 10px;
+  grid-gap: 5px;
 }
 
 .individual_componets .individual_wrap .individual.age .text .elementary {
@@ -322,6 +326,10 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 5px;
 }
 
 .individual_componets .sub_individual .sub_individuals > :last-child .form_box input {

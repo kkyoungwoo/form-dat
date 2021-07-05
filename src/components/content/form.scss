@@ -58,6 +58,7 @@
         }
         
         .form{
+            padding: 5px 0;
             border-right: 1px solid black;
             border-bottom: 1px solid black;
         }
@@ -75,70 +76,77 @@
         .form.boss_text {
             grid-area: boss_text;
         }
-     
+        
         .form.address {
             grid-area: address;
         }
         .form.address_text {
             grid-area: address_text;
         }
-
+        
         .form.manager {
             grid-area: manager;
         }
         .form.manager_text {
             grid-area: manager_text;
         }
-     
+        
         .form.compony_position {
             grid-area: compony_position;
         }
         .form.compony_position_text {
             grid-area: compony_position_text;
         }
-     
+        
         .form.phone {
             grid-area: phone;
         }
         .form.phone_text {
             grid-area: phone_text;
         }
-
+        
         .form.email {
             grid-area: email;
         }
         .form.email_text {
             grid-area: email_text;
         }
-     
+        
         .form.website {
             grid-area: website;
         }
         .form.website_text {
             grid-area: website_text;
         }
-     
+        
         .form.Field {
             grid-area: Field;
         }
         .form.Field_text {
             grid-area: Field_text;
+            .spanright{
+                display: inline-block;
+                width: 360px;
+            }
+            span{
+                margin-left: 5px;
+            }
         }
-
+        
         .form.item {
             grid-area: item;
         }
         .form.item_text {
             grid-area: item_text;
         }
-
+        
         .form.banner {
             grid-area: banner;
         }
         .form.banner_text {
             grid-area: banner_text;
         }
-     
+        
     }
     .business_Registration{
         display: grid;
@@ -147,7 +155,7 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         grid-template-areas: "number number_input"
-                                "file file_input";
+        "file file_input";
         grid-gap: 0px;
         margin: 20px 0;
         border-top: 1px solid #c0c0c0;
@@ -208,7 +216,7 @@
             border-bottom: 1px solid #c0c0c0;
             border-right: 1px solid #c0c0c0;
             box-sizing: border-box;
-            padding: 5px;
+            padding: 10px 5px;
         }
 
         .booth.sub_color {
@@ -428,13 +436,15 @@
     .submit_btn {
         width: 150px;
         height: 32px;
-        background: #007ce2;
+        background: #e2f0d9;
         border: none;
-        color: white;
+        color: black;
         font-weight: bold;
         cursor: pointer;
         margin-top: 50px;
         margin-left: 322.5px;
+        border : 1px solid black;
+        box-sizing: border-box;
     }
 
     .cancle_btn {
@@ -442,7 +452,7 @@
         height: 32px;
         background: #bbbbbb;
         border: none;
-        color: white;
+        color: black;
         font-weight: bold;
         cursor: pointer;
         margin-left: 5px;
@@ -452,4 +462,5 @@
             padding: 7px 0;
         }
     }
+    margin-bottom: 150px;
 }

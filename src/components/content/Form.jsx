@@ -10,11 +10,12 @@ function Form(props) {
     const history = useHistory();
 
     function handleClick() {
-        alert('신청이 완료되었습니다.')
+        alert('정상적으로 접수되었습니다.')
         history.goBack()
     }
 
     useEffect(() => {props.setIsMe(false)})
+
     //회사명
     const [company,setCompany] = useState("")
     //대표자명
@@ -104,15 +105,13 @@ function Form(props) {
 
 
     useEffect(()=>{
-        setPhSubTotal(TotalPay)
-        setPhVat(TotalPay * 10 / 100)
-        setPhTotal(phSubTotal+phVat)
+        setPhSubTotal(TotalPay.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+        const numberTotalPay = (TotalPay * 10 / 100)
+        setPhVat(numberTotalPay.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+        const totalpay = phEvOne+phEvTwo+PhEvThree+phKo+phGlo+phWater+phAir+phLan + (phEvOne+phEvTwo+PhEvThree+phKo+phGlo+phWater+phAir+phLan) /10
+        setPhTotal(totalpay.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
     })
-
-    const submitJoin = useCallback(()=>{
-        alert("신청이 완료되었습니다.")
-    })
-
+    
     function sendEmail(e) {
         e.preventDefault();
     
@@ -123,14 +122,6 @@ function Form(props) {
               console.log(error.text);
           });
       }
-
-      const plusNumFile = plusNum.map((item,idx)=>{
-          const plusId = "plusNumItem"+item
-          console.log(plusId)
-          return(
-              <div>asd</div>
-          )
-      })
       
     return (
         <div className="form_wrap contact-form">
@@ -190,7 +181,7 @@ function Form(props) {
                 </div>
                 <div className="form address main_color">주소</div>
                 <div className="form address_text">
-                    <input type="text" onChange={(e)=> setAddress(e.target.value)}/>
+                    <input type="text" onChange={(e)=> setAddress(e.target.value)} style={{width:"30%"}}/>
                 </div>
                 <div className="form manager main_color">담당자명</div>
                 <div className="form manager_text">
@@ -215,16 +206,16 @@ function Form(props) {
                 <div className="form Field main_color">참가 전시 분야</div>
                 <div className="form Field_text">
                     <input type="checkbox"/>
-                    산림소재산업(목재,목조건축,목제품,임산물)
+                    <span className="spanright">산림소재산업(목재,목조건축,목제품,임산물)</span>
                     <input type="checkbox"/>
                     신재생 에너지(바이오 매스, 펠릿)
                     <br />
                     <input type="checkbox"/>
-                    친환경(R&D,산지관리,환경,스마트 모빌리티)
+                    <span className="spanright">친환경(R&D,산지관리,환경,스마트 모빌리티)</span>
                     <input type="checkbox"/>
                     여가·레포츠(숲 체험, 산림레포츠)
                     <br />
-                    기　　타 : <input className="fild_etc" type="text" style={{width:"79%"}} onChange={(e)=> setFildetc(e.target.value)}/>
+                    <span>기　  타 : </span><input className="fild_etc" type="text" style={{width:"79.5%"}} onChange={(e)=> setFildetc(e.target.value)}/>
                 </div>
                 <div className="form item main_color">주요 전시품목</div>
                 <div className="form item_text">
@@ -232,7 +223,7 @@ function Form(props) {
                 </div>
                 <div className="form banner main_color">상호명(현수막)</div>
                 <div className="form banner_text">
-                    <input type="text" onChange={(e)=> setBanner(e.target.value)} placeholder="띄어쓰기 및 오타에 유의하시길 바랍니다" style={{width:"90%"}}/>
+                    <input type="text" onChange={(e)=> setBanner(e.target.value)} placeholder=" 띄어쓰기 및 오타에 유의하시길 바랍니다" style={{width:"90%"}}/>
                 </div>
             </div>
             <div className="business_Registration">
@@ -242,7 +233,7 @@ function Form(props) {
                 </div>
                 <div className="Registration file title_color">사업자등록증첨부</div>
                 <div className="Registration file_input">
-                    <input type="file" />
+                    <input type="file" /> <span style={{fontSize:"13px"}}>2MB 미만으로 첨부해주세요.</span>
                 </div>
             </div>
             <div className="title_text">부스신청</div>
@@ -255,7 +246,7 @@ function Form(props) {
                 <div className="booth boothname title_color">부스</div>
                 <div className="booth independent title_color">독립부스(면적만 제공, 3m x 3m)</div>
                 <div className="booth independent_ea">
-                    <input type="number" onChange={(e)=> setPhBoothOne(e.target.value)}/>개
+                    <input type="number" min="0" onChange={(e)=> setPhBoothOne(e.target.value)}/>개
                 </div>
                 <div className="booth independent_ea_support">주최측 지원</div>
                 <div className="booth independent_ea_support_total" >
@@ -263,7 +254,7 @@ function Form(props) {
                 </div>
                 <div className="booth nomal title_color">기본(조립)부스(옥타늄, 3m x 3m)</div>
                 <div className="booth nomal_ea">
-                    <input type="number" onChange={(e)=> setPhBoothTwo(e.target.value)}/>개
+                    <input type="number" min="0" onChange={(e)=> setPhBoothTwo(e.target.value)}/>개
                 </div>
                 <div className="booth nomal_ea_support">주최측 지원</div>
                 <div className="booth nomal_ea_support_total">
@@ -271,7 +262,7 @@ function Form(props) {
                 </div>
                 <div className="booth premium title_color">프리미엄부스(6m x 9m)</div>
                 <div className="booth premium_ea">
-                    <input type="number" onChange={()=> setPhBoothThree(0)}/>개
+                    <input type="number" min="0" onChange={()=> setPhBoothThree(0)}/>개
                 </div>
                 <div className="booth premium_ea_support">비용 별도 협의(신청 후)</div>
                 <div className="booth premium_ea_support_total">
@@ -281,73 +272,71 @@ function Form(props) {
                 <div className="booth elec title_color">전기</div>
                 <div className="booth one_phase title_color">단상220V(60Hz)</div>
                 <div className="booth one_phase_kw" >
-                    <input type="number"
-                    onChange={(e)=> setPhEvOne(Number(e.target.value)*50000)}
-                    />KW
+                    <input type="number" min="0" onChange={(e)=> setPhEvOne(Number(e.target.value)*50000)}/>KW
                 </div>
                 <div className="booth one_phase_kw_won">50,000원</div>
                 <div className="booth one_phase_kw_total">
-                    {phEvOne}원
+                    {(phEvOne.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))}원
                 </div>
                 <div className="booth two_phase title_color">삼상220V(60Hz)</div>
                 <div className="booth two_phase_kw">
-                    <input type="number" onChange={(e)=> setEvTwo(Number(e.target.value)*50000)}/>KW
+                    <input type="number" min="0" onChange={(e)=> setEvTwo(Number(e.target.value)*50000)}/>KW
                 </div>
                 <div className="booth two_phase_kw_won">50,000원</div>
                 <div className="booth two_phase_kw_total">
-                    {phEvTwo}원
+                    {(phEvTwo.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))}원
                 </div>
                 <div className="booth three_phase title_color">삼상380V(60Hz)</div>
                 <div className="booth three_phase_kw">
-                    <input type="number" onChange={(e)=> setPhEvThree(Number(e.target.value)*50000)}/>KW
+                    <input type="number" min="0" onChange={(e)=> setPhEvThree(Number(e.target.value)*50000)}/>KW
                 </div>
                 <div className="booth three_phase_kw_won">50,000원</div>
                 <div className="booth three_phase_kw_total">
-                    {PhEvThree}원
+                    {(PhEvThree.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))}원
                 </div>
 
 
                 <div className="booth tell title_color">전화</div>
                 <div className="booth ko title_color">국내</div>
                 <div className="booth ko_unit">
-                    <input type="number" onChange={(e)=> setPhKo(Number(e.target.value)*90000)}/>대
+                    <input type="number" min="0" onChange={(e)=> setPhKo(Number(e.target.value)*90000)}/>대
                 </div>
                 <div className="booth ko_unit_won">90,000</div>
                 <div className="booth ko_unit_total">
-                    {phKo}원
+                    {(phKo.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))}원
                 </div>
                 <div className="booth global title_color">국제</div>
                 <div className="booth global_unit">
-                    <input type="number" onChange={(e)=> setPhGlo(Number(e.target.value)*170000)}/>대
+                    <input type="number" min="0" onChange={(e)=> setPhGlo(Number(e.target.value)*170000)}/>대
                 </div>
                 <div className="booth global_unit_won">170,000</div>
                 <div className="booth global_unit_total">
-                    {phGlo}원
+                    {(phGlo.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))}원
                 </div>
 
                 <div className="booth water title_color sub_color">급배수</div>
                 <div className="booth water_won">150,000원</div>
                 <div className="booth water_place">
-                    <input type="number" onChange={(e)=> setPhWater(Number(e.target.value)*150000)}/>개소
+                    <input type="number" min="0" onChange={(e)=> setPhWater(Number(e.target.value)*150000)}/>개소
                 </div>
                 <div className="booth water_place_total">
-                    {phWater}원
+                    {(phWater.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))}원
                 </div>
                 <div className="booth air title_color sub_color">압축공기</div>
                 <div className="booth air_won">200,000원</div>
                 <div className="booth air_place">
-                    <input type="number" onChange={(e)=> setPhAir(Number(e.target.value)*200000)}/>개소
+                    <input type="number" min="0" onChange={(e)=> setPhAir(Number(e.target.value)*200000)}/>개소
                 </div>
                 <div className="booth air_place_total">
-                    {phAir}원
+                    {(phAir.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))}원
                 </div>
                 <div className="booth lan title_color sub_color">LAN</div>
                 <div className="booth lan_port">
-                    <input type="number" onChange={(e)=> setPhLan(Number(e.target.value)*150000)}/>PORT
+                    <input type="number" min="0" onChange={(e)=> setPhLan(Number(e.target.value)*150000)}/>PORT
                 </div>
                 <div className="booth lan_port_won">150,000원</div>
                 <div className="booth lan_port_total">
-                    {phLan}원
+                    {(phLan.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))}원
                 </div>
 
                 <div className="booth subtotal title_color sub_color">소계</div>

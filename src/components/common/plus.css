@@ -24,7 +24,7 @@
 .plus_wrap .plus_header .plus_header_warp .header_left .header_left_text {
   font-size: 18px;
   font-weight: bold;
-  color: #003366;
+  color: black;
 }
 
 .plus_wrap .plus_header .plus_header_warp .header_left .header_left_btn {
@@ -37,9 +37,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: white;
-  background: #113366;
-  border: none;
+  color: black;
+  background: #e2f0d9;
+  border: 1px solid black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 45px;
   height: 25px;
   margin-left: 10px;
@@ -74,7 +76,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #c0c0c0;
+  background: #f1f1f1;
   border: 1px solid #c9c9c9;
 }
 

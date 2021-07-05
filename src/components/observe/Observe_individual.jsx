@@ -2,19 +2,30 @@ import React, { useEffect,useState,useCallback } from 'react'
 import { useHistory } from 'react-router-dom'
 import './Observe_individual.css'
 import Observe_Plus from '../common/Observe_Plus'
+import Privacy from './Privacy'
 import emailjs from 'emailjs-com';
 import DaumPostcode from 'react-daum-postcode';
 import '../common/kakao.css'
 
 function Observe_individual(props) {
 
+    useEffect(() => {props.setIsMe(false)})
+
     const history = useHistory();
 
-    function handleClick() {
-        alert('신청이 완료되었습니다.')
+    function agreeBtnClick() {
+        alert('정상적으로 접수되었습니다.')
         history.goBack()
+    }
+    function handleClick() {
+        agreeBtn ? agreeBtnClick() : alert('개인정보 취급방침에 동의해주세요')
       }
 
+    const BtnClick = useCallback(()=>{
+        setAgreeBtn(!agreeBtn)
+    })
+    
+    const [agreeBtn,setAgreeBtn] = useState(false)
     //이름
     const [name,setName] = useState("")
     //휴대폰
@@ -117,11 +128,6 @@ function Observe_individual(props) {
     const [dd,setDD] = useState("")
 
 
-    const submitJoin = useCallback(()=>{
-        alert("신청이 완료되었습니다.")
-    })
-
-    
 
     function sendEmail(e) {
         e.preventDefault();
@@ -406,7 +412,12 @@ function Observe_individual(props) {
                     //" , 기타 :"+dd
                 }/>
                 <div className={"kakaomap "}></div>
-                <div className="title_text fontsizeup">개인 온라인 참관신청</div>
+                <div className="title_text fontsizeup">(개인)</div>
+                < Privacy />
+                <div className="agree_box">
+                    <input type="checkbox" id="agreeBtn" onClick={BtnClick} style={{marginRight:"10px"}}/>
+                    <label for="agreeBtn">개인정보취급방침 동의합니다.</label>
+                </div>
                 <div className="title_text" >기본정보</div>
                 <div className="individual_wrap">
                     <div className="individual name">
@@ -453,8 +464,8 @@ function Observe_individual(props) {
                                 </div>
                                 {/*Kakaomap*/}
                             </div>
-                            <div>
-                                상세주소<input type="text" onChange={(e)=> setAddresss(e.target.value)}/>
+                            <div style={{margin: "10px 0"}}>
+                                상세주소 :<input type="text" onChange={(e)=> setAddresss(e.target.value)} style={{marginLeft: "10px"}}/>
                             </div>
                         </div>
                     </div>
@@ -479,8 +490,8 @@ function Observe_individual(props) {
                     <div className="individual gender">
                         <div className="title">성별</div>
                         <div className="text">
-                            <input type="radio" onChange={() => setGender("여성")} name="gender" />여성
-                            <input type="radio" onChange={() => setGender("남성")} name="gender" />남성
+                            <input type="radio" onChange={() => setGender("여성")} name="gender" style={{ marginRight: "5px"}}/> 여성
+                            <input type="radio" onChange={() => setGender("남성")} name="gender" style={{ marginRight: "5px"}}/> 남성
                         </div>
                     </div>
                     <div className="individual age">
@@ -500,8 +511,8 @@ function Observe_individual(props) {
                     <div className="individual class">
                         <div className="title">등록분류</div>
                         <div className="text">
-                            <input onChange={() => setClassNum("바이어/관련종사자")} type="radio" name="classradio" value="comp" /> 바이어/관련종사자
-                            <input onChange={() => setClassNum("일반관람")} type="radio" name="classradio" value="peop" /> 일반관람
+                            <input onChange={() => setClassNum("바이어/관련종사자")} type="radio" name="classradio" value="comp" style={{marginRight: "5px"}}/> 바이어/관련종사자
+                            <input onChange={() => setClassNum("일반관람")} type="radio" name="classradio" value="peop" style={{marginRight: "5px"}}/> 일반관람
                         </div>
                     </div>
                 </div>

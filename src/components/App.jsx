@@ -18,28 +18,46 @@ function App() {
 
   const mainPageIsMe = useCallback(()=>{
     setIsMe(true)
+    setMainText("온라인 참가신청")
   },[isMe])
+
+
+    const [mainText,setMainText] = useState("온라인 참가신청")
+
+  const booth = useCallback(()=>{
+    setMainText("온라인 참가신청")
+  },[mainText])
+
+  const individual = useCallback(()=>{
+    setMainText("참관객 온라인 사전등록")
+  },[mainText])
+
+  const group = useCallback(()=>{
+    setMainText("참관객 온라인 사전등록")
+  },[mainText])
+
+
 
   return (
     <div className="App">
       <Link to="/" >
         <div className="maintext" onClick={
           mainPageIsMe
-        }>온라인 참가신청</div>
+        }>{mainText}</div>
       </Link>
       <div className={ isMe ? 'link_tree display_flex' : 'link_tree display_none' } >
         <Link to="/booth_form" className="event_box" onClick={
-          handleClick
+          handleClick,booth
         }>
         참가업체 부스신청
         </Link>
         <Link to="/observe_group" className="event_box" onClick={
-          handleClick
+          handleClick,group
         }>
           참관객 단체 온라인 사전등록
         </Link>
         <Link to="/observe_individual" className="event_box" onClick={
-          handleClick
+          handleClick,individual
         }>
           참관객 개인 온라인 사전등록
         </Link>

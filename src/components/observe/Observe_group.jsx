@@ -11,7 +11,7 @@ function Observe_group(props) {
     const history = useHistory();
 
     function agreeBtnClick() {
-        alert('신청이 완료되었습니다.')
+        alert('정상적으로 접수되었습니다.')
         history.goBack()
     }
     function handleClick() {
@@ -136,13 +136,13 @@ function Observe_group(props) {
                     "\n참관객 명단 :"+list+
                     "\n참관예정일자 :"+day+days+dayss
                 }/>
-            <div className="title_text fontsizeup">단체 온라인 참관신청</div>
+            <div className="title_text fontsizeup">(단체)</div>
             {address}
             <div>
                 < Privacy />
                 <div className="agree_box">
-                    <input type="checkbox" onClick={BtnClick}/>
-                    개인정보취급방침 동의합니다.
+                    <input type="checkbox" id="agreeBtn" onClick={BtnClick} style={{marginRight:"10px"}}/>
+                    <label for="agreeBtn">개인정보취급방침 동의합니다.</label>
                 </div>
             </div>
             <div className="privacy_wrap">
