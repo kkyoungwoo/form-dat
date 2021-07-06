@@ -10,6 +10,7 @@ import '../common/kakao.css'
 function Observe_individual(props) {
 
     useEffect(() => {props.setIsMe(false)})
+    const [agreeBtn,setAgreeBtn] = useState(false)
 
     const history = useHistory();
 
@@ -23,9 +24,8 @@ function Observe_individual(props) {
 
     const BtnClick = useCallback(()=>{
         setAgreeBtn(!agreeBtn)
-    })
+    },[agreeBtn])
     
-    const [agreeBtn,setAgreeBtn] = useState(false)
     //이름
     const [name,setName] = useState("")
     //휴대폰
@@ -130,14 +130,18 @@ function Observe_individual(props) {
 
 
     function sendEmail(e) {
-        e.preventDefault();
+        if(agreeBtn === true){
+            e.preventDefault();
     
-        emailjs.sendForm('service_spdcidi', 'template_zau8w0f', e.target, 'user_YOvzVUT3C3OBySLzLPves')
+        emailjs.sendForm('service_kjop294', 'template_9srge3e', e.target, 'user_wjFKBm1HwlcURiZKvOyRr')
           .then((result) => {
               console.log(result.text);
           }, (error) => {
               console.log(error.text);
           });
+        }else{
+          e.preventDefault();
+        }
       }
 
     const [isMeA,setIsMeA] = useState(true)

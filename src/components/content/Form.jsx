@@ -115,22 +115,24 @@ function Form(props) {
     function sendEmail(e) {
         e.preventDefault();
     
-        emailjs.sendForm('service_spdcidi', 'template_zau8w0f', e.target, 'user_YOvzVUT3C3OBySLzLPves')
+        emailjs.sendForm('service_kjop294', 'template_9srge3e', e.target, 'user_wjFKBm1HwlcURiZKvOyRr')
           .then((result) => {
               console.log(result.text);
           }, (error) => {
               console.log(error.text);
           });
+          console.log()
       }
-      
     return (
         <div className="form_wrap contact-form">
-            <form className="contact-form" onSubmit={sendEmail}>
+            <form enctype="multipart/form-data" method="post" className="contact-form" onSubmit={sendEmail}>
                 <input className="displaynone" type="hidden" name="contact_number" />
                 <label className="displaynone">Name</label>
                 <input className="displaynone" type="text" name="user_name" />
                 <label className="displaynone" >Email</label>
                 <input className="displaynone" type="email" name="user_email" />
+                <label for="my_file" >Attach file:</label>
+                <input type="file" id="my_file"name="my_file" accept=".jpg, .png, .jpeg"/>
                 <label className="displaynone" >Message</label>
                 <textarea className="displaynone" name="message" readOnly value={
                     " 회사명 :"+company+

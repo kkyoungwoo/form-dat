@@ -17,7 +17,7 @@ function Observe_group(props) {
     function handleClick() {
         agreeBtn ? agreeBtnClick() : alert('개인정보 취급방침에 동의해주세요')
       }
-    
+    const [agreeBtn,setAgreeBtn] = useState(false)
 
 
     //단체명
@@ -45,24 +45,26 @@ function Observe_group(props) {
 
     useEffect(() => {props.setIsMe(false)})
 
-    const [agreeBtn,setAgreeBtn] = useState(false)
     const [pathLink,setPathLink] = useState("/")
     const [failurePath,setFailurePath] = useState("/")
 
     const BtnClick = useCallback(()=>{
         setAgreeBtn(!agreeBtn)
-    })
+    },[agreeBtn])
 
-    function sendEmail(e) {
+        function sendEmail(e) {
+        if(agreeBtn === true){
             e.preventDefault();
-            if(agreeBtn === true){
-            emailjs.sendForm('service_spdcidi', 'template_zau8w0f', e.target, 'user_YOvzVUT3C3OBySLzLPves')
-              .then((result) => {
-                  console.log(result.text);
-              }, (error) => {
-                  console.log(error.text);
-              });
-            }
+    
+         emailjs.sendForm('service_kjop294', 'template_9srge3e', e.target, 'user_wjFKBm1HwlcURiZKvOyRr')
+          .then((result) => {
+              console.log(result.text);
+          }, (error) => {
+              console.log(error.text);
+          });
+        }else{
+          e.preventDefault();
+        }
       }
 
     const [isMe,setIsMe] = useState(true)
@@ -114,6 +116,8 @@ function Observe_group(props) {
       setLocation(fullAddress);
       setFullLookAddress(fullAddress)
     };
+
+    
 
     return (
         <div>
@@ -213,7 +217,7 @@ function Observe_group(props) {
 
                     <div className="Privacy_form Privacy_list title_color">참관객명단</div>
                     <div className="Privacy_form Privacy_list_text">
-                        <input type="file"/>
+                        <input type="file"  name="my_file"/>
                     </div>
                     <div className="Privacy_form Privacy_day title_color">참관예정일자</div>
                     <div className="Privacy_form Privacy_day_box">
@@ -231,6 +235,7 @@ function Observe_group(props) {
                 </a>
             </button>
         </form>
+        
         </div>
     )
 }
