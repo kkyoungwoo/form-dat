@@ -31,7 +31,7 @@ function Observe_group(props) {
     //담당자휴대전화
     const [number,setNumber] = useState("")
     //이메일
-    const [email,setEmail] = useState("")
+    const [emails,setEmails] = useState("")
     //주소
     const [addres,setAddres] = useState("")
     //상세주소
@@ -52,20 +52,24 @@ function Observe_group(props) {
         setAgreeBtn(!agreeBtn)
     },[agreeBtn])
 
-        function sendEmail(e) {
-        if(agreeBtn === true){
-            e.preventDefault();
-    
-         emailjs.sendForm('service_kjop294', 'template_9srge3e', e.target, 'user_wjFKBm1HwlcURiZKvOyRr')
-          .then((result) => {
-              console.log(result.text);
-          }, (error) => {
-              console.log(error.text);
-          });
-        }else{
-          e.preventDefault();
-        }
-      }
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      emailjs
+        .sendForm(
+          "service_kjop294",
+          "template_9srge3e",
+          e.target,
+          "user_wjFKBm1HwlcURiZKvOyRr"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+    };
 
     const [isMe,setIsMe] = useState(true)
     const [isMine,setMine] = useState(true)
@@ -121,20 +125,27 @@ function Observe_group(props) {
 
     return (
         <div>
-            <form className="contact-form" onSubmit={sendEmail}>
+            <form className="contact-form" onSubmit={handleSubmit}>
                 <input className="displaynone" type="hidden" name="contact_number" />
-                <label className="displaynone">Name</label>
-                <input className="displaynone" type="text" name="user_name" />
-                <label className="displaynone">Email</label>
-                <input className="displaynone" type="email" name="user_email" />
-                <label className="displaynone">Message</label>
+
+                <input className="displaynone" type="groupName" name="groupName" value={groupName} />
+                <input className="displaynone" type="name" name="name" value={name} />
+                <input className="displaynone" type="phone" name="phone" value={phone} />
+                <input className="displaynone" type="position" name="position" value={position} />
+                <input className="displaynone" type="number" name="number" value={number} />
+                <input className="displaynone" type="emails" name="emails" value={emails} />
+                <input className="displaynone" type="fullLookAddress" name="fullLookAddress" value={fullLookAddress} />
+                <input className="displaynone" type="address" name="address" value={address} />
+                <input className="displaynone" type="list" name="list" value={list} />
+                <input className="displaynone" type="day" name="day" value={day+days+dayss} />
+
                 <textarea className="displaynone" name="message" readOnly value={
                     "단체명 :"+groupName+
                     "\n담당자성명 :"+name+
                     "\n담당자연락처 :"+phone+
                     "\n직위 :"+position+
                     "\n담당자휴대전화 :"+number+
-                    "\n이메일 :"+email+
+                    "\n이메일 :"+emails+
                     "\n주소 :"+fullLookAddress+
                     "\n상세주소 :"+address+
                     "\n참관객 명단 :"+list+
@@ -178,7 +189,7 @@ function Observe_group(props) {
                     </div>
                     <div className="Privacy_form Privacy_email title_color">이메일</div>
                     <div className="Privacy_form Privacy_email_text">
-                        <input type="text" onChange={(e) => setEmail(e.target.value)}/>
+                        <input type="text" onChange={(e) => setEmails(e.target.value)}/>
                     </div>
                     <div className="Privacy_form Privacy_address title_color">주소</div>
                     <div className="Privacy_form Privacy_address_script">
@@ -217,7 +228,7 @@ function Observe_group(props) {
 
                     <div className="Privacy_form Privacy_list title_color">참관객명단</div>
                     <div className="Privacy_form Privacy_list_text">
-                        <input type="file"  name="my_file"/>
+                    <input type="file" id="my_file"name="my_file" accept=".jpg, .png, .jpeg"/> <span style={{fontSize:"13px", marginLeft:"20px"}}>500kb 미만으로 첨부해주세요.</span>
                     </div>
                     <div className="Privacy_form Privacy_day title_color">참관예정일자</div>
                     <div className="Privacy_form Privacy_day_box">

@@ -35,6 +35,7 @@ function Form(props) {
 
     //참가전시분야
     const [field,setField] = useState("")
+
     //기타
     const [fildetc,setFildetc] = useState("")
 
@@ -103,6 +104,37 @@ function Form(props) {
             setPlusNum(Delet)
         }
 
+        const [firstCheck,setFirstCheck] = useState("")
+        const [secoundCheck,setSecoundCheck] = useState("")
+        const [thardCheck,setThardCheck] = useState("")
+        const [FoursCheck,setFoursCheck] = useState("")
+
+        const [firstCheckBtn,setFirstCheckBtn] = useState(true)
+        const [secoundCheckBtn,setSecoundCheckBtn] = useState(true)
+        const [thardCheckBtn,setThardCheckBtn] = useState(true)
+        const [FoursCheckBtn,setFoursCheckBtn] = useState(true)
+
+        const firstFunk = useCallback(() =>{
+            setFirstCheckBtn(!firstCheckBtn)
+            firstCheckBtn ? setFirstCheck("산림소재산업(목재,목조건축,목제품,임산물)  ") : setFirstCheck("")
+        },[firstCheckBtn])
+
+        const secoundFunk = useCallback(() =>{
+            setSecoundCheckBtn(!secoundCheckBtn)
+            secoundCheckBtn ? setSecoundCheck("신재생 에너지(바이오 매스, 펠릿)  ") : setSecoundCheck("")
+        },[secoundCheckBtn])
+
+        const thardFunk = useCallback(() =>{
+            setThardCheckBtn(!thardCheckBtn)
+            thardCheckBtn ? setThardCheck("친환경(R&D,산지관리,환경,스마트 모빌리티)  ") : setThardCheck("")
+        },[thardCheckBtn])
+
+        const FoursFunk = useCallback(() =>{
+            setFoursCheckBtn(!FoursCheckBtn)
+            FoursCheckBtn ? setFoursCheck("여가·레포츠(숲 체험, 산림레포츠)  ") : setFoursCheck("")
+        },[FoursCheckBtn])
+
+
 
     useEffect(()=>{
         setPhSubTotal(TotalPay.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
@@ -110,67 +142,62 @@ function Form(props) {
         setPhVat(numberTotalPay.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
         const totalpay = phEvOne+phEvTwo+PhEvThree+phKo+phGlo+phWater+phAir+phLan + (phEvOne+phEvTwo+PhEvThree+phKo+phGlo+phWater+phAir+phLan) /10
         setPhTotal(totalpay.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+        setField(firstCheck+" , "+secoundCheck+" , "+thardCheck+" , "+FoursCheck)
     })
     
-    function sendEmail(e) {
+    const handleSubmit = (e) => {
         e.preventDefault();
-    
-        emailjs.sendForm('service_kjop294', 'template_9srge3e', e.target, 'user_wjFKBm1HwlcURiZKvOyRr')
-          .then((result) => {
+        emailjs
+          .sendForm(
+            "service_kjop294",
+            "template_9srge3e",
+            e.target,
+            "user_wjFKBm1HwlcURiZKvOyRr"
+          )
+          .then(
+            (result) => {
               console.log(result.text);
-          }, (error) => {
+            },
+            (error) => {
               console.log(error.text);
-          });
-          console.log()
-      }
+            }
+          );
+      };
+      
     return (
         <div className="form_wrap contact-form">
-            <form enctype="multipart/form-data" method="post" className="contact-form" onSubmit={sendEmail}>
-                <input className="displaynone" type="hidden" name="contact_number" />
-                <label className="displaynone">Name</label>
-                <input className="displaynone" type="text" name="user_name" />
-                <label className="displaynone" >Email</label>
-                <input className="displaynone" type="email" name="user_email" />
-                <label for="my_file" >Attach file:</label>
-                <input type="file" id="my_file"name="my_file" accept=".jpg, .png, .jpeg"/>
-                <label className="displaynone" >Message</label>
-                <textarea className="displaynone" name="message" readOnly value={
-                    " 회사명 :"+company+
-                    "\n대표자명 :"+boss+
-                    "\n주소 :"+address+
-                    "\n담당자명 :"+compmanager+
-                    "\n부서(직위) :"+componyPosition+
-                    "\n연락처 :"+phone+
-                    "\nE-mail :"+email+
-                    "\n홈페이지 주소 :"+webSite+
+            <form enctype="multipart/form-data" method="post" className="contact-form" onSubmit={handleSubmit}>
+                <input className="displaynone" type="text" name="contact_number" />
 
-                    "\n\n참가전시분야 :"+field+
-                    "\n기타 :"+fildetc+
-                    //산림소재산업(목재,목조건축,목제품,임산물)
-                    //신재생 에너지(바이오 매스, 펠릿)
-                    //친환경(R&D,산지관리,환경,스마트 모빌리티)
-                    //여가·레포츠(숲 체험, 산림레포츠)
-                    "\n주요 전시품목 :"+item+
-                    "\n상호명(현수막) :"+banner+
-                    "\n사업자등록번호 :"+compNumber+
+                <input className="displaynone" type="text" name="company" value={company} />
+                <input className="displaynone" type="text" name="boss" value={boss} />
+                <input className="displaynone" type="text" name="address" value={address} />
+                <input className="displaynone" type="text" name="compmanager" value={compmanager} />
+                <input className="displaynone" type="text" name="componyPosition" value={componyPosition} />
+                <input className="displaynone" type="text" name="phone" value={phone} />
+                <input className="displaynone" type="text" name="email" value={email} />
+                <input className="displaynone" type="text" name="webSite" value={webSite} />
+                <input className="displaynone" type="text" name="field" value={field} />
+                <input className="displaynone" type="text" name="fildetc" value={fildetc} />
+                <input className="displaynone" type="text" name="item" value={item} />
+                <input className="displaynone" type="text" name="banner" value={banner} />
+                <input className="displaynone" type="text" name="compNumber" value={compNumber} />
+                <input className="displaynone" type="text" name="phBoothOne" value={phBoothOne} />
+                <input className="displaynone" type="text" name="phBoothTwo" value={phBoothTwo} />
+                <input className="displaynone" type="text" name="phBoothThree" value={phBoothThree} />
+                <input className="displaynone" type="text" name="phEvOne" value={phEvOne} />
+                <input className="displaynone" type="text" name="phEvTwo" value={phEvTwo} />
+                <input className="displaynone" type="text" name="PhEvThree" value={PhEvThree} />
+                <input className="displaynone" type="text" name="phKo" value={phKo} />
+                <input className="displaynone" type="text" name="phGlo" value={phGlo} />
+                <input className="displaynone" type="text" name="phWater" value={phWater} />
+                <input className="displaynone" type="text" name="phAir" value={phAir} />
+                <input className="displaynone" type="text" name="phLan" value={phLan} />
+                <input className="displaynone" type="text" name="phSubTotal" value={phSubTotal} />
+                <input className="displaynone" type="text" name="phVat" value={phVat} />
+                <input className="displaynone" type="text" name="phTotal" value={phTotal} />
+                <input className="displaynone" type="text" name="boothEtc" value={boothEtc} />
 
-                    "\n\n독립부스 :"+phBoothOne+" 개"+
-                    "\n기본부스 :"+phBoothTwo+" 개"+
-                    "\n프리미엄부스 :"+phBoothThree+" 개"+
-                    "\n단상220v :"+phEvOne+" KW"+
-                    "\n삼상220v :"+phEvTwo+" KW"+
-                    "\n삼상380v :"+PhEvThree+" KW"+
-                    "\n국내 :"+phKo+" 대"+
-                    "\n국제 :"+phGlo+" 대"+
-                    "\n급배수 :"+phWater+" 개소"+
-                    "\n압축공기 :"+phAir+" 개소"+
-                    "\n랜 :"+phLan+" PORT"+
-                    "\n\n소계 :"+phSubTotal+" 원"+
-                    "\n부가세 :"+phVat+" 원"+
-                    "\n합계 :"+phTotal+" 원"+
-                    "\n부가항목 외 기타사항 "+boothEtc +
-                    "\n\n출입증 신청 "+boothPlus
-                }/>
             <nav className="title_text">주최측에서 제공하는 <span>[참가업체 메뉴얼]</span>을 반드시 확인하신 후 참가 신청해주시기 바랍니다.</nav>
             <div className="company_form">
                 <div className="form company main_color">회사명</div>
@@ -207,15 +234,14 @@ function Form(props) {
                 </div>
                 <div className="form Field main_color">참가 전시 분야</div>
                 <div className="form Field_text">
-                    <input type="checkbox"/>
-                    <span className="spanright">산림소재산업(목재,목조건축,목제품,임산물)</span>
-                    <input type="checkbox"/>
-                    신재생 에너지(바이오 매스, 펠릿)
-                    <br />
-                    <input type="checkbox"/>
-                    <span className="spanright">친환경(R&D,산지관리,환경,스마트 모빌리티)</span>
-                    <input type="checkbox"/>
-                    여가·레포츠(숲 체험, 산림레포츠)
+                    <input type="checkbox" id="firstFunk"onChange={firstFunk}/>
+                    <label for="firstFunk"><span className="spanright">산림소재산업(목재,목조건축,목제품,임산물)</span></label>
+                    <input type="checkbox" id="secoundFunk" onChange={secoundFunk}/>
+                    <label for="secoundFunk">신재생 에너지(바이오 매스, 펠릿)</label><br />
+                    <input type="checkbox" id="thardFunk" onChange={thardFunk}/>
+                    <span className="spanright"><label for="thardFunk">친환경(R&D,산지관리,환경,스마트 모빌리티)</label></span>
+                    <input type="checkbox" id="FoursFunk" onChange={FoursFunk}/>
+                    <label for="FoursFunk">여가·레포츠(숲 체험, 산림레포츠)</label>
                     <br />
                     <span>기　  타 : </span><input className="fild_etc" type="text" style={{width:"79.5%"}} onChange={(e)=> setFildetc(e.target.value)}/>
                 </div>
@@ -235,7 +261,7 @@ function Form(props) {
                 </div>
                 <div className="Registration file title_color">사업자등록증첨부</div>
                 <div className="Registration file_input">
-                    <input type="file" /> <span style={{fontSize:"13px"}}>2MB 미만으로 첨부해주세요.</span>
+                <input type="file" id="my_file"name="my_file" accept=".jpg, .png, .jpeg"/> <span style={{fontSize:"13px"}}>500kb 미만으로 첨부해주세요.</span>
                 </div>
             </div>
             <div className="title_text">부스신청</div>
@@ -264,7 +290,7 @@ function Form(props) {
                 </div>
                 <div className="booth premium title_color">프리미엄부스(6m x 9m)</div>
                 <div className="booth premium_ea">
-                    <input type="number" min="0" onChange={()=> setPhBoothThree(0)}/>개
+                    <input type="number" min="0" onChange={(e)=> setPhBoothThree(e.target.value)}/>개
                 </div>
                 <div className="booth premium_ea_support">비용 별도 협의(신청 후)</div>
                 <div className="booth premium_ea_support_total">

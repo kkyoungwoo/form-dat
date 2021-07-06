@@ -35,7 +35,7 @@ function Observe_individual(props) {
     //상세주소
     const [addresss,setAddresss] = useState("")
     //이메일
-    const [email,setEmail] = useState("")
+    const [emails,setEmails] = useState("")
     //회사명
     const [company,setCompany] = useState("")
     //부서/직위
@@ -133,7 +133,7 @@ function Observe_individual(props) {
         if(agreeBtn === true){
             e.preventDefault();
     
-        emailjs.sendForm('service_kjop294', 'template_9srge3e', e.target, 'user_wjFKBm1HwlcURiZKvOyRr')
+        emailjs.sendForm('service_kjop294', 'template_f06lu62', e.target, 'user_wjFKBm1HwlcURiZKvOyRr')
           .then((result) => {
               console.log(result.text);
           }, (error) => {
@@ -360,17 +360,27 @@ function Observe_individual(props) {
         <div className="individual_componets">
             <form className="contact-form" onSubmit={sendEmail}>
                 <input className="displaynone" type="hidden" name="contact_number" />
-                <label className="displaynone">Name</label>
-                <input className="displaynone" type="text" name="user_name" />
-                <label className="displaynone">Email</label>
-                <input className="displaynone" type="email" name="user_email" />
-                <label className="displaynone">Message</label>
+                <input className="displaynone" type="name" name="name" value={name} />
+                <input className="displaynone" type="phone" name="phone" value={phone} />
+                <input className="displaynone" type="fullLookAddress" name="fullLookAddress" value={fullLookAddress} />
+                <input className="displaynone" type="addresss" name="addresss" value={addresss} />
+                <input className="displaynone" type="emails" name="email" value={emails} />
+                <input className="displaynone" type="company" name="company" value={company} />
+                <input className="displaynone" type="positon" name="positon" value={positon} />
+                <input className="displaynone" type="gender" name="gender" value={gender} />
+                <input className="displaynone" type="age" name="age" value={age} />
+                <input className="displaynone" type="classnum" name="classnum" value={classNum} />
+                <input className="displaynone" type="companycord" name="companycord" value={a+b+c+d+e+f+g+h} />
+                <input className="displaynone" type="purpose" name="purpose" value={i+j+k+l+m+n+o} />
+                <input className="displaynone" type="pathway" name="pathway" value={p+q+r+s+t+u+v} />
+                <input className="displaynone" type="cominterestpany" name="cominterestpany" value={w+x+y+z+aa+bb+cc+dd} />
+
                 <textarea className="displaynone" name="message" readOnly value={
                     "이름 :"+name+
                     "\n휴대폰 :"+phone+
                     "\n주소 :"+fullLookAddress+
                     "\n상세주소 :"+addresss+
-                    "\n이메일 :"+email+
+                    "\n이메일 :"+emails+
                     "\n회사명 :"+company+
                     "\n부서/직위 :"+positon+
                     "\n성별 :"+gender+
@@ -476,7 +486,7 @@ function Observe_individual(props) {
                     <div className="individual email">
                         <div className="title">이메일</div>
                         <div className="text">
-                            <input type="text" onChange={(e)=> setEmail(e.target.value)}/>
+                            <input type="text" onChange={(e)=> setEmails(e.target.value)}/>
                         </div>
                     </div>
                     <div className="individual company">
