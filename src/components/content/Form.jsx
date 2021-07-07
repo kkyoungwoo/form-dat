@@ -84,7 +84,7 @@ function Form(props) {
     const [boothPlus,setBoothPlus] = useState([0])
 
     //신청인 정보
-    const [plusNum,setPlusNum] = useState([0])
+    const [plusNum,setPlusNum] = useState([1,2,3,4,5,6,7,8,9,10])
     const [plusName,setPlusName] = useState()
     const [plusPosition,setPlusPosition] = useState()
     const [plusPhoneNum,setPlusPhoneNum] = useState()
@@ -390,7 +390,7 @@ function Form(props) {
                     <div className="plus_header_warp">
                         <div className="header_left">
                             <div className="header_left_text">· 출입증신청</div>
-                            <div className="header_left_btn" onClick={plusMambers}>추가</div>
+                            {/*<div className="header_left_btn" onClick={plusMambers}>추가</div>*/}
                         </div>
                         <div className="header_right">
                                 · 박람회장 내 출입증 미소지시 출입이 불가능합니다.
@@ -410,55 +410,139 @@ function Form(props) {
                         </div>
                         <div className="plus_table">
                             <h4>성명</h4>
-                            {plusNum.map((item,idx) => {
-                                return(
-                                    <div key={item}>
-                                        <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
-                                    </div>
-                                )
-                            })}
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            
                         </div>
                         <div className="plus_table">
                             <h4>직함</h4>
-                            {plusNum.map((item,idx) => {
-                                return(
-                                    <div key={item}>
-                                        <input type="text" onChange={(e) => {setPlusPosition(e.target.value)}}/>
-                                    </div>
-                                )
-                            })}
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
                         </div>
                         <div className="plus_table">
                             <h4>연락처</h4>
-                            {plusNum.map((item,idx) => {
-                                return(
-                                    <div key={item}>
-                                        <input type="text" onChange={(e) => {setPlusPhoneNum(e.target.value)}}/>
-                                    </div>
-                                )
-                            })}
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
                         </div >
                         <div className="plus_table">
                             <h4>비고</h4>
-                            {plusNum.map((item,idx) => {
-                                return(
-                                    <div key={item}>
-                                        <input type="text" onChange={(e) => {setPlusText(e.target.value)}}/>
-                                    </div>
-                                )
-                            })}
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
+                            <div>
+                                <input type="text" onChange={(e) => {setPlusName(e.target.value)}}/>
+                            </div>
                         </div>
                         <div className="plus_table">
                             <h4>-</h4>
-                            {plusNum.map((item,idx) => {
-                                return(
-                                    <div key={item}  className={"cancle"+idx}>
-                                        <div className="btn_close" onClick={() => (handleDelete(idx))}>
-                                            삭제
-                                        </div>
-                                    </div>
-                                )
-                            })}
                         </div>
                     </div>
                 </div>

@@ -7,7 +7,7 @@ import Observe_individual from './observe/Observe_individual'
 import { Route,Switch,Link } from 'react-router-dom'
 import Sessec from './Sessec';
 
-function App() {
+function App({ history }) {
 
   const webSiteLink = ("http://www.google.com")
 
@@ -30,7 +30,6 @@ function App() {
   const group = useCallback(()=>{
     setMainText("참관객 온라인 사전등록")
   },[mainText])
-
 
 
   return (
