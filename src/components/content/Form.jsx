@@ -11,7 +11,7 @@ function Form(props) {
 
     function handleClick() {
         alert('정상적으로 접수되었습니다.')
-        history.goBack()
+        history.push("/sessec")
     }
 
     useEffect(() => {props.setIsMe(false)})
@@ -210,7 +210,7 @@ function Form(props) {
                 </div>
                 <div className="form address main_color">주소</div>
                 <div className="form address_text">
-                    <input type="text" onChange={(e)=> setAddress(e.target.value)} style={{width:"30%"}}/>
+                    <input type="text" onChange={(e)=> setAddress(e.target.value)} style={{width:"60%"}}/>
                 </div>
                 <div className="form manager main_color">담당자명</div>
                 <div className="form manager_text">
@@ -261,7 +261,7 @@ function Form(props) {
                 </div>
                 <div className="Registration file title_color">사업자등록증첨부</div>
                 <div className="Registration file_input">
-                <input type="file" id="my_file"name="my_file" accept=".jpg, .png, .jpeg"/> <span style={{fontSize:"13px"}}>500kb 미만으로 첨부해주세요.</span>
+                <input type="file" id="my_file"name="my_file" accept=".jpg, .png, .jpeg" style={{width:"55%"}}/> <span style={{fontSize:"13px",marginLeft:"15px"}}> 500kb 미만으로 첨부해주세요.</span>
                 </div>
             </div>
             <div className="title_text">부스신청</div>
@@ -465,12 +465,12 @@ function Form(props) {
             </div>
         </div>
         <input type="submit" className="submit_btn" onClick={()=> handleClick()} value="참가신청" />
-            <button className="cancle_btn" onClick={
+            {/*<button className="cancle_btn" onClick={
             () => alert("메인화면으로 이동합니다.")}>
                 <a href={props.webSiteLink} >
                 취소하기
                 </a>
-            </button>
+            </button>*/}
         </form>
         </div>
     )

@@ -60,7 +60,7 @@
             &>:first-child {
                 height: 100%;
                 width: 150px;
-                background: #c0c0c0;
+                background: #f1f1f1;
             }
             &>:last-child {
                 display: flex;
@@ -178,6 +178,7 @@
         border-left: 1px solid #666666;
 
         .title {
+            border-right: 1px solid #666666;
             font-weight: bold;
         }
 
@@ -198,7 +199,7 @@
             &>:first-child {
                 height: 100%;
                 width: 150px;
-                background: #c0c0c0;
+                background: #f1f1f1;
             }
             &>:last-child{
                 display: block;
@@ -233,7 +234,7 @@
         }
     }
     .submit_btn {
-        width: 150px;
+        width: 200px;
         height: 32px;
         background: #007ce2;
         border: none;
@@ -241,7 +242,8 @@
         font-weight: bold;
         cursor: pointer;
         margin-top: 50px;
-        margin-left: 322.5px;
+        margin-left: 375px;
+        margin-bottom: 150px;
     }
 
     .cancle_btn {

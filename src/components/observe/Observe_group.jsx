@@ -12,7 +12,7 @@ function Observe_group(props) {
 
     function agreeBtnClick() {
         alert('정상적으로 접수되었습니다.')
-        history.goBack()
+        history.push("/sessec")
     }
     function handleClick() {
         agreeBtn ? agreeBtnClick() : alert('개인정보 취급방침에 동의해주세요')
@@ -57,7 +57,7 @@ function Observe_group(props) {
       emailjs
         .sendForm(
           "service_kjop294",
-          "template_9srge3e",
+          "template_drnj6df",
           e.target,
           "user_wjFKBm1HwlcURiZKvOyRr"
         )
@@ -138,19 +138,6 @@ function Observe_group(props) {
                 <input className="displaynone" type="address" name="address" value={address} />
                 <input className="displaynone" type="list" name="list" value={list} />
                 <input className="displaynone" type="day" name="day" value={day+days+dayss} />
-
-                <textarea className="displaynone" name="message" readOnly value={
-                    "단체명 :"+groupName+
-                    "\n담당자성명 :"+name+
-                    "\n담당자연락처 :"+phone+
-                    "\n직위 :"+position+
-                    "\n담당자휴대전화 :"+number+
-                    "\n이메일 :"+emails+
-                    "\n주소 :"+fullLookAddress+
-                    "\n상세주소 :"+address+
-                    "\n참관객 명단 :"+list+
-                    "\n참관예정일자 :"+day+days+dayss
-                }/>
             <div className="title_text fontsizeup">(단체)</div>
             {address}
             <div>
@@ -222,13 +209,21 @@ function Observe_group(props) {
                     {/*Kakaomap*/}
                     </div>
                     <div className="Privacy_form Privacy_address_text">
-                        <span className="text_margin">상세주소</span>
-                        <input type="text" onChange={(e) => setAddres(e.target.value)}/>
+                        <span className="text_margin" >상세주소</span>
+                        <input type="text" onChange={(e) => setAddress(e.target.value)} style={{width:"60%"}}/>
                     </div>
 
                     <div className="Privacy_form Privacy_list title_color">참관객명단</div>
                     <div className="Privacy_form Privacy_list_text">
                     <input type="file" id="my_file"name="my_file" accept=".jpg, .png, .jpeg"/> <span style={{fontSize:"13px", marginLeft:"20px"}}>500kb 미만으로 첨부해주세요.</span>
+                      <a href="https://drive.google.com/file/d/1wsXJuRdBjWo0BQm8BVdpK7u-6yn2Z35W/view?usp=sharing" target="_blank">
+                        <span style={{borderRadius: "5px",
+                              backgroundImage: "linear-gradient(to top, rgb(207, 207, 207) 16%, rgb(252, 252, 252) 79%); ",
+                              padding: "3px",
+                              border: "1px solid #000",
+                              color: "black",
+                              textDecoration: "none",marginLeft:"30px", padding:"10px 10px 10px"}}>양식 다운로드</span>
+                      </a>
                     </div>
                     <div className="Privacy_form Privacy_day title_color">참관예정일자</div>
                     <div className="Privacy_form Privacy_day_box">
@@ -239,12 +234,12 @@ function Observe_group(props) {
                 </div>
             </div>
               <input type="submit" className="secces" onClick={()=> handleClick()} value="참관신청하기"/>
-            <button className="failure" onClick={
+            {/*<button className="failure" onClick={
             () => alert("메인화면으로 이동합니다.")}>
                 <a href={props.webSiteLink}>
                 취소하기
                 </a>
-            </button>
+            </button>*/}
         </form>
         
         </div>

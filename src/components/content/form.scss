@@ -162,6 +162,8 @@
         border-left: 1px solid #c0c0c0;
 
         .Registration {
+            display: flex;
+            align-items: center;
             border-right: 1px solid #c0c0c0;
             border-bottom: 1px solid #c0c0c0;
             padding: 5px;
@@ -434,7 +436,7 @@
         margin: 5px;
     }
     .submit_btn {
-        width: 150px;
+        width: 200px;
         height: 32px;
         background: #e2f0d9;
         border: none;
@@ -442,7 +444,7 @@
         font-weight: bold;
         cursor: pointer;
         margin-top: 50px;
-        margin-left: 322.5px;
+        margin-left: 375px;
         border : 1px solid black;
         box-sizing: border-box;
     }

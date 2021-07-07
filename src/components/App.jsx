@@ -5,6 +5,7 @@ import Form from './content/Form'
 import Observe_group from './observe/Observe_group'
 import Observe_individual from './observe/Observe_individual'
 import { Route,Switch,Link } from 'react-router-dom'
+import Sessec from './Sessec';
 
 function App() {
 
@@ -15,12 +16,6 @@ function App() {
   const handleClick = useCallback(()=>{
     isMe === true ? setIsMe(!true) : setIsMe(false)
   },[isMe])
-
-  const mainPageIsMe = useCallback(()=>{
-    setIsMe(true)
-    setMainText("온라인 참가신청")
-  },[isMe])
-
 
     const [mainText,setMainText] = useState("온라인 참가신청")
 
@@ -40,11 +35,9 @@ function App() {
 
   return (
     <div className="App">
-      <Link to="/" >
-        <div className="maintext" onClick={
-          mainPageIsMe
-        }>{mainText}</div>
-      </Link>
+      <div>
+        <div className="maintext">{mainText}</div>
+      </div>
       <div className={ isMe ? 'link_tree display_flex' : 'link_tree display_none' } >
         <Link to="/booth_form" className="event_box" onClick={
           handleClick,booth
@@ -64,10 +57,12 @@ function App() {
       </div>
 
       <Switch>
+        
         <Route path="/form" render={() => <Form isMe={isMe} setIsMe={setIsMe} webSiteLink={webSiteLink} />}/>
         <Route path="/booth_form" render={() => <Agree isMe={isMe} setIsMe={setIsMe} webSiteLink={webSiteLink}/>}/>
         <Route path="/observe_group" render={() => <Observe_group isMe={isMe} setIsMe={setIsMe} webSiteLink={webSiteLink}/>}/>
         <Route path="/observe_individual" render={() => <Observe_individual isMe={isMe} setIsMe={setIsMe} webSiteLink={webSiteLink}/>}/>
+        <Route path="/sessec" render={() => <Sessec isMe={isMe} setIsMe={setIsMe}/>} exact />
       </Switch>
     </div>
   );

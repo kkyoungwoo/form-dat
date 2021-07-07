@@ -16,7 +16,7 @@ function Observe_individual(props) {
 
     function agreeBtnClick() {
         alert('정상적으로 접수되었습니다.')
-        history.goBack()
+        history.push("/sessec")
     }
     function handleClick() {
         agreeBtn ? agreeBtnClick() : alert('개인정보 취급방침에 동의해주세요')
@@ -478,8 +478,8 @@ function Observe_individual(props) {
                                 </div>
                                 {/*Kakaomap*/}
                             </div>
-                            <div style={{margin: "10px 0"}}>
-                                상세주소 :<input type="text" onChange={(e)=> setAddresss(e.target.value)} style={{marginLeft: "10px"}}/>
+                            <div style={{margin: "0",display:"flex"}}>
+                            <span>상세주소 :</span><span><input type="text" onChange={(e)=> setAddresss(e.target.value)} style={{marginLeft: "10px",width:"180%"}}/></span>
                             </div>
                         </div>
                     </div>
@@ -615,12 +615,12 @@ function Observe_individual(props) {
                 </div>
                 <Observe_Plus />
                 <input type="submit" className="submit_btn" onClick={()=> handleClick()} value="참가신청"/>
-                <button className="cancle_btn" onClick={
+                {/*<button className="cancle_btn" onClick={
                 () => alert("메인화면으로 이동합니다.")}>
                     <a href={props.webSiteLink}>
                     취소하기
                     </a>
-                </button>
+                </button>*/}
             </form>
         </div>
     )

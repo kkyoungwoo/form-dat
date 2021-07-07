@@ -73,7 +73,7 @@
 .individual_componets .individual_wrap .individual > :first-child {
   height: 100%;
   width: 150px;
-  background: #c0c0c0;
+  background: #f1f1f1;
 }
 
 .individual_componets .individual_wrap .individual > :last-child {
@@ -278,6 +278,7 @@
 }
 
 .individual_componets .sub_individual .title {
+  border-right: 1px solid #666666;
   font-weight: bold;
 }
 
@@ -309,7 +310,7 @@
 .individual_componets .sub_individual .sub_individuals > :first-child {
   height: 100%;
   width: 150px;
-  background: #c0c0c0;
+  background: #f1f1f1;
 }
 
 .individual_componets .sub_individual .sub_individuals > :last-child {
@@ -368,7 +369,7 @@
 }
 
 .individual_componets .submit_btn {
-  width: 150px;
+  width: 200px;
   height: 32px;
   background: #007ce2;
   border: none;
@@ -376,7 +377,8 @@
   font-weight: bold;
   cursor: pointer;
   margin-top: 50px;
-  margin-left: 322.5px;
+  margin-left: 375px;
+  margin-bottom: 150px;
 }
 
 .individual_componets .cancle_btn {
