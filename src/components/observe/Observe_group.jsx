@@ -10,15 +10,9 @@ function Observe_group(props) {
     
     const history = useHistory();
 
-    function agreeBtnClick() {
-        alert('정상적으로 접수되었습니다.')
-        history.push("/sessec")
-    }
-    function handleClick() {
-        agreeBtn ? agreeBtnClick() : alert('개인정보 취급방침에 동의해주세요')
-      }
     const [agreeBtn,setAgreeBtn] = useState(false)
 
+    
 
     //단체명
     const [groupName,setGroupName] = useState("")
@@ -64,6 +58,8 @@ function Observe_group(props) {
         .then(
           (result) => {
             console.log(result.text);
+            alert('정상적으로 접수되었습니다.')
+            history.push("/sessec")
           },
           (error) => {
             console.log(error.text);
@@ -121,49 +117,7 @@ function Observe_group(props) {
       setFullLookAddress(fullAddress)
     };
 
-    const [plus_name0,setPlus_name0] = useState("")
-    const [plus_name1,setPlus_name1] = useState("")
-    const [plus_name2,setPlus_name2] = useState("")
-    const [plus_name3,setPlus_name3] = useState("")
-    const [plus_name4,setPlus_name4] = useState("")
-    const [plus_name5,setPlus_name5] = useState("")
-    const [plus_name6,setPlus_name6] = useState("")
-    const [plus_name7,setPlus_name7] = useState("")
-    const [plus_name8,setPlus_name8] = useState("")
-    const [plus_name9,setPlus_name9] = useState("")
 
-    const [plus_p0,setPlus_p0] = useState("")
-    const [plus_p1,setPlus_p1] = useState("")
-    const [plus_p2,setPlus_p2] = useState("")
-    const [plus_p3,setPlus_p3] = useState("")
-    const [plus_p4,setPlus_p4] = useState("")
-    const [plus_p5,setPlus_p5] = useState("")
-    const [plus_p6,setPlus_p6] = useState("")
-    const [plus_p7,setPlus_p7] = useState("")
-    const [plus_p8,setPlus_p8] = useState("")
-    const [plus_p9,setPlus_p9] = useState("")
-
-    const [plus_phone0,setPlus_phone0] = useState("")
-    const [plus_phone1,setPlus_phone1] = useState("")
-    const [plus_phone2,setPlus_phone2] = useState("")
-    const [plus_phone3,setPlus_phone3] = useState("")
-    const [plus_phone4,setPlus_phone4] = useState("")
-    const [plus_phone5,setPlus_phone5] = useState("")
-    const [plus_phone6,setPlus_phone6] = useState("")
-    const [plus_phone7,setPlus_phone7] = useState("")
-    const [plus_phone8,setPlus_phone8] = useState("")
-    const [plus_phone9,setPlus_phone9] = useState("")
-
-    const [plus_n0,setpplus_n0] = useState("")
-    const [plus_n1,setpplus_n1] = useState("")
-    const [plus_n2,setpplus_n2] = useState("")
-    const [plus_n3,setpplus_n3] = useState("")
-    const [plus_n4,setpplus_n4] = useState("")
-    const [plus_n5,setpplus_n5] = useState("")
-    const [plus_n6,setpplus_n6] = useState("")
-    const [plus_n7,setpplus_n7] = useState("")
-    const [plus_n8,setpplus_n8] = useState("")
-    const [plus_n9,setpplus_n9] = useState("")
 return (
           <div>
             <form className="contact-form" onSubmit={handleSubmit}>
@@ -179,28 +133,6 @@ return (
                 <input className="displaynone" type="address" name="address" value={address} />
                 <input className="displaynone" type="list" name="list" value={list} />
                 <input className="displaynone" type="day" name="day" value={day+days+dayss} />
-
-                <input className="displaynone" type="plus_name0" name="plus_name0" value={plus_p0} />
-                <input className="displaynone" type="plus_name1" name="plus_name1" value={plus_p1} />
-                <input className="displaynone" type="plus_name2" name="plus_name2" value={plus_p2} />
-                <input className="displaynone" type="plus_name3" name="plus_name3" value={plus_p3} />
-                <input className="displaynone" type="plus_name4" name="plus_name4" value={plus_p4} />
-                <input className="displaynone" type="plus_name5" name="plus_name5" value={plus_p5} />
-                <input className="displaynone" type="plus_name6" name="plus_name6" value={plus_p6} />
-                <input className="displaynone" type="plus_name7" name="plus_name7" value={plus_p7} />
-                <input className="displaynone" type="plus_name8" name="plus_name8" value={plus_p8} />
-                <input className="displaynone" type="plus_name9" name="plus_name9" value={plus_p9} />
-
-                <input className="displaynone" type="plus_name0" name="plus_name0ay" value={plus_name0} />
-                <input className="displaynone" type="plus_name1" name="plus_name1ay" value={plus_name1} />
-                <input className="displaynone" type="plus_name2" name="plus_name2ay" value={plus_name2} />
-                <input className="displaynone" type="plus_name3" name="plus_name3ay" value={plus_name3} />
-                <input className="displaynone" type="plus_name4" name="plus_name4ay" value={plus_name4} />
-                <input className="displaynone" type="plus_name5" name="plus_name5ay" value={plus_name5} />
-                <input className="displaynone" type="plus_name6" name="plus_name6ay" value={plus_name6} />
-                <input className="displaynone" type="plus_name7" name="plus_name7ay" value={plus_name7} />
-                <input className="displaynone" type="plus_name8" name="plus_name8ay" value={plus_name8} />
-                <input className="displaynone" type="plus_name9" name="plus_name9ay" value={plus_name9} />
 
            
             <div className="title_text fontsizeup">(단체)</div>
@@ -298,7 +230,8 @@ return (
                     </div>
                 </div>
             </div>
-              <input type="submit" className="secces" onClick={()=> handleClick()} value="참관신청하기"/>
+              {agreeBtn ? <input type="submit" className="secces" value="참관신청하기" /> :
+                <input className="secces" value="참관신청하기" style={{ textAlign:"center", padding: "0px",boxSizing:"border-box"}} onClick={()=> alert("개인정보취급방침에 동의해 주세요.")}/>}
             {/*<button className="failure" onClick={
             () => alert("메인화면으로 이동합니다.")}>
                 <a href={props.webSiteLink}>

@@ -13,14 +13,6 @@ function Observe_individual(props) {
 
     const history = useHistory();
 
-    function agreeBtnClick() {
-        alert('정상적으로 접수되었습니다.')
-        history.push("/sessec")
-    }
-    function handleClick() {
-        agreeBtn ? agreeBtnClick() : alert('개인정보 취급방침에 동의해주세요')
-      }
-
     const BtnClick = useCallback(()=>{
         setAgreeBtn(!agreeBtn)
     },[agreeBtn])
@@ -42,7 +34,7 @@ function Observe_individual(props) {
     //성별
     const [gender,setGender] = useState("")
     //연령대
-    const [age,setAge] = useState("")
+    const [ages,setAge] = useState("")
     //등록분류
     const [classNum,setClassNum] = useState("")
 
@@ -128,20 +120,27 @@ function Observe_individual(props) {
 
 
 
-    function sendEmail(e) {
-        if(agreeBtn === true){
+
+    const handleSubmit = (e) => {
             e.preventDefault();
-    
-        emailjs.sendForm('service_kjop294', 'template_f06lu62', e.target, 'user_wjFKBm1HwlcURiZKvOyRr')
-          .then((result) => {
+        emailjs
+          .sendForm(
+            "service_kjop294",
+            "template_f06lu62",
+            e.target,
+            "user_wjFKBm1HwlcURiZKvOyRr"
+          )
+          .then(
+            (result) => {
               console.log(result.text);
-          }, (error) => {
+              history.push("/sessec");
+            },
+            (error) => {
               console.log(error.text);
-          });
-        }else{
-          e.preventDefault();
-        }
-      }
+            },
+          );
+    };
+
 
     const [isMeA,setIsMeA] = useState(true)
     const [isMeB,setIsMeB] = useState(true)
@@ -355,24 +354,135 @@ function Observe_individual(props) {
       setFullLookAddress(fullAddress)
     };
 
+    const [plus_name0,setPlus_name0] = useState("")
+    const [plus_name1,setPlus_name1] = useState("")
+    const [plus_name2,setPlus_name2] = useState("")
+    const [plus_name3,setPlus_name3] = useState("")
+    const [plus_name4,setPlus_name4] = useState("")
+    const [plus_name5,setPlus_name5] = useState("")
+    const [plus_name6,setPlus_name6] = useState("")
+    const [plus_name7,setPlus_name7] = useState("")
+    const [plus_name8,setPlus_name8] = useState("")
+    const [plus_name9,setPlus_name9] = useState("")
+
+    const [plus_p0,setPlus_p0] = useState("")
+    const [plus_p1,setPlus_p1] = useState("")
+    const [plus_p2,setPlus_p2] = useState("")
+    const [plus_p3,setPlus_p3] = useState("")
+    const [plus_p4,setPlus_p4] = useState("")
+    const [plus_p5,setPlus_p5] = useState("")
+    const [plus_p6,setPlus_p6] = useState("")
+    const [plus_p7,setPlus_p7] = useState("")
+    const [plus_p8,setPlus_p8] = useState("")
+    const [plus_p9,setPlus_p9] = useState("")
+
+    const [plus_phone0,setPlus_phone0] = useState("")
+    const [plus_phone1,setPlus_phone1] = useState("")
+    const [plus_phone2,setPlus_phone2] = useState("")
+    const [plus_phone3,setPlus_phone3] = useState("")
+    const [plus_phone4,setPlus_phone4] = useState("")
+    const [plus_phone5,setPlus_phone5] = useState("")
+    const [plus_phone6,setPlus_phone6] = useState("")
+    const [plus_phone7,setPlus_phone7] = useState("")
+    const [plus_phone8,setPlus_phone8] = useState("")
+    const [plus_phone9,setPlus_phone9] = useState("")
+
+    const [plus_n0,setpplus_n0] = useState("")
+    const [plus_n1,setpplus_n1] = useState("")
+    const [plus_n2,setpplus_n2] = useState("")
+    const [plus_n3,setpplus_n3] = useState("")
+    const [plus_n4,setpplus_n4] = useState("")
+    const [plus_n5,setpplus_n5] = useState("")
+    const [plus_n6,setpplus_n6] = useState("")
+    const [plus_n7,setpplus_n7] = useState("")
+    const [plus_n8,setpplus_n8] = useState("")
+    const [plus_n9,setpplus_n9] = useState("")
+
+    const [plus_x0,setpplus_x0] = useState("")
+    const [plus_x1,setpplus_x1] = useState("")
+    const [plus_x2,setpplus_x2] = useState("")
+    const [plus_x3,setpplus_x3] = useState("")
+    const [plus_x4,setpplus_x4] = useState("")
+    const [plus_x5,setpplus_x5] = useState("")
+    const [plus_x6,setpplus_x6] = useState("")
+    const [plus_x7,setpplus_x7] = useState("")
+    const [plus_x8,setpplus_x8] = useState("")
+    const [plus_x9,setpplus_x9] = useState("")
+
     return (
         <div className="individual_componets">
-            <form className="contact-form" onSubmit={sendEmail}>
-                <input className="displaynone" type="hidden" name="contact_number" />
-                <input className="displaynone" type="name" name="name" value={name} />
-                <input className="displaynone" type="phone" name="phone" value={phone} />
-                <input className="displaynone" type="fullLookAddress" name="fullLookAddress" value={fullLookAddress} />
-                <input className="displaynone" type="addresss" name="addresss" value={addresss} />
-                <input className="displaynone" type="emails" name="email" value={emails} />
-                <input className="displaynone" type="company" name="company" value={company} />
-                <input className="displaynone" type="positon" name="positon" value={positon} />
-                <input className="displaynone" type="gender" name="gender" value={gender} />
-                <input className="displaynone" type="age" name="age" value={age} />
-                <input className="displaynone" type="classnum" name="classnum" value={classNum} />
-                <input className="displaynone" type="companycord" name="companycord" value={a+b+c+d+e+f+g+h} />
-                <input className="displaynone" type="purpose" name="purpose" value={i+j+k+l+m+n+o} />
-                <input className="displaynone" type="pathway" name="pathway" value={p+q+r+s+t+u+v} />
-                <input className="displaynone" type="cominterestpany" name="cominterestpany" value={w+x+y+z+aa+bb+cc+dd} />
+            <form className="contact-form" onSubmit={handleSubmit}>
+                <input className="displaynone" type="text" name="contact_number" />
+                <input className="displaynone" type="text" name="name" value={name} />
+                <input className="displaynone" type="text" name="phone" value={phone} />
+                <input className="displaynone" type="text" name="fullLookAddress" value={fullLookAddress} />
+                <input className="displaynone" type="text" name="addresss" value={addresss} />
+                <input className="displaynone" type="text" name="emails" value={emails} />
+                <input className="displaynone" type="text" name="company" value={company} />
+                <input className="displaynone" type="text" name="positon" value={positon} />
+                <input className="displaynone" type="text" name="gender" value={gender} />
+                <input className="displaynone" type="text" name="ages" value={ages} />
+                <input className="displaynone" type="text" name="classnum" value={classNum} />
+                <input className="displaynone" type="text" name="companycord" value={a+b+c+d+e+f+g+h} />
+                <input className="displaynone" type="text" name="purpose" value={i+j+k+l+m+n+o} />
+                <input className="displaynone" type="text" name="pathway" value={p+q+r+s+t+u+v} />
+                <input className="displaynone" type="text" name="cominterestpany" value={w+x+y+z+aa+bb+cc+dd} />
+
+                <input className="displaynone" type="text" name="plus_name0" value={plus_name0} />
+                <input className="displaynone" type="text" name="plus_name1" value={plus_name1} />
+                <input className="displaynone" type="text" name="plus_name2" value={plus_name2} />
+                <input className="displaynone" type="text" name="plus_name3" value={plus_name3} />
+                <input className="displaynone" type="text" name="plus_name4" value={plus_name4} />
+                <input className="displaynone" type="text" name="plus_name5" value={plus_name5} />
+                <input className="displaynone" type="text" name="plus_name6" value={plus_name6} />
+                <input className="displaynone" type="text" name="plus_name7" value={plus_name7} />
+                <input className="displaynone" type="text" name="plus_name8" value={plus_name8} />
+                <input className="displaynone" type="text" name="plus_name9" value={plus_name9} />
+                
+                <input className="displaynone" type="text" name="plus_p0" value={plus_p0} />
+                <input className="displaynone" type="text" name="plus_p1" value={plus_p1} />
+                <input className="displaynone" type="text" name="plus_p2" value={plus_p2} />
+                <input className="displaynone" type="text" name="plus_p3" value={plus_p3} />
+                <input className="displaynone" type="text" name="plus_p4" value={plus_p4} />
+                <input className="displaynone" type="text" name="plus_p5" value={plus_p5} />
+                <input className="displaynone" type="text" name="plus_p6" value={plus_p6} />
+                <input className="displaynone" type="text" name="plus_p7" value={plus_p7} />
+                <input className="displaynone" type="text" name="plus_p8" value={plus_p8} />
+                <input className="displaynone" type="text" name="plus_p9" value={plus_p9} />
+
+                <input className="displaynone" type="text" name="plus_phone0" value={plus_phone0} />
+                <input className="displaynone" type="text" name="plus_phone1" value={plus_phone1} />
+                <input className="displaynone" type="text" name="plus_phone2" value={plus_phone2} />
+                <input className="displaynone" type="text" name="plus_phone3" value={plus_phone3} />
+                <input className="displaynone" type="text" name="plus_phone4" value={plus_phone4} />
+                <input className="displaynone" type="text" name="plus_phone5" value={plus_phone5} />
+                <input className="displaynone" type="text" name="plus_phone6" value={plus_phone6} />
+                <input className="displaynone" type="text" name="plus_phone7" value={plus_phone7} />
+                <input className="displaynone" type="text" name="plus_phone8" value={plus_phone8} />
+                <input className="displaynone" type="text" name="plus_phone9" value={plus_phone9} />
+
+                <input className="displaynone" type="text" name="plus_n0" value={plus_n0} />
+                <input className="displaynone" type="text" name="plus_n1" value={plus_n1} />
+                <input className="displaynone" type="text" name="plus_n2" value={plus_n2} />
+                <input className="displaynone" type="text" name="plus_n3" value={plus_n3} />
+                <input className="displaynone" type="text" name="plus_n4" value={plus_n4} />
+                <input className="displaynone" type="text" name="plus_n5" value={plus_n5} />
+                <input className="displaynone" type="text" name="plus_n6" value={plus_n6} />
+                <input className="displaynone" type="text" name="plus_n7" value={plus_n7} />
+                <input className="displaynone" type="text" name="plus_n8" value={plus_n8} />
+                <input className="displaynone" type="text" name="plus_n9" value={plus_n9} />
+
+                <input className="displaynone" type="text" name="plus_x0" value={plus_x0} />
+                <input className="displaynone" type="text" name="plus_x1" value={plus_x1} />
+                <input className="displaynone" type="text" name="plus_x2" value={plus_x2} />
+                <input className="displaynone" type="text" name="plus_x3" value={plus_x3} />
+                <input className="displaynone" type="text" name="plus_x4" value={plus_x4} />
+                <input className="displaynone" type="text" name="plus_x5" value={plus_x5} />
+                <input className="displaynone" type="text" name="plus_x6" value={plus_x6} />
+                <input className="displaynone" type="text" name="plus_x7" value={plus_x7} />
+                <input className="displaynone" type="text" name="plus_x8" value={plus_x8} />
+                <input className="displaynone" type="text" name="plus_x9" value={plus_x9} />
+
 
                 <textarea className="displaynone" name="message" readOnly value={
                     "이름 :"+name+
@@ -383,7 +493,7 @@ function Observe_individual(props) {
                     "\n회사명 :"+company+
                     "\n부서/직위 :"+positon+
                     "\n성별 :"+gender+
-                    "\n연령대 :"+age+
+                    "\n연령대 :"+ages+
                     "\n등록분류 :"+classNum+
 
                     "\n\n회사분류 :"+a+b+c+d+e+f+g+h+
@@ -626,166 +736,166 @@ function Observe_individual(props) {
                         <div className="plus_table first" >
                             <h4>회사명</h4>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_name0(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_name1(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_name2(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_name3(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_name4(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_name5(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_name6(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_name7(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_name8(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_name9(e.target.value)}/>
                             </div>
                         </div>
                         <div className="plus_table">
                             <h4>부서/직위</h4>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_p0(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_p1(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_p2(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_p3(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_p4(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_p5(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_p6(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_p7(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_p8(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_p9(e.target.value)}/>
                             </div>
                         </div>
                         <div className="plus_table">
                             <h4>이름</h4>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_phone0(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_phone1(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_phone2(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_phone3(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_phone4(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_phone5(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_phone6(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_phone7(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_phone8(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setPlus_phone9(e.target.value)}/>
                             </div>
                         </div>
                         <div className="plus_table">
                             <h4>휴대전화</h4>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setpplus_n0(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setpplus_n1(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setpplus_n2(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setpplus_n3(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setpplus_n4(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setpplus_n5(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setpplus_n6(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setpplus_n7(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setpplus_n8(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setpplus_n9(e.target.value)}/>
                             </div>
                         </div >
                         <div className="plus_table">
                             <h4>이메일</h4>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setpplus_x0(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setpplus_x1(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setpplus_x2(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setpplus_x3(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setpplus_x4(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setpplus_x5(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setpplus_x6(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setpplus_x7(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setpplus_x8(e.target.value)}/>
                             </div>
                             <div>
-                                <input type="text" style={{width:"120px"}}/>
+                                <input type="text" onChange={(e)=> setpplus_x9(e.target.value)}/>
                             </div>
                         </div>
                         <div className="plus_table">
@@ -794,8 +904,8 @@ function Observe_individual(props) {
                     </div>
                 </div>
             </div>
-
-                <input type="submit" className="submit_btn" onClick={()=> handleClick()} value="참가신청"/>
+                {agreeBtn ? <input type="submit" className="submit_btn" value="참가신청"/> :
+                <input type="text" className="submit_btn" value="참가신청" style={{ textAlign:"center"}} onClick={()=> alert("개인정보취급방침에 동의해 주세요.")}/>}
                 {/*<button className="cancle_btn" onClick={
                 () => alert("메인화면으로 이동합니다.")}>
                     <a href={props.webSiteLink}>
