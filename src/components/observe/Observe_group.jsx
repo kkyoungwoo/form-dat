@@ -23,7 +23,7 @@ function Observe_group(props) {
     //직위
     const [position,setPosition] = useState("")
     //담당자휴대전화
-    const [number,setNumber] = useState("")
+    const [numbers,setNumbers] = useState("")
     //이메일
     const [emails,setEmails] = useState("")
     //주소
@@ -123,16 +123,16 @@ return (
             <form className="contact-form" onSubmit={handleSubmit}>
                 <input className="displaynone" type="hidden" name="contact_number" />
 
-                <input className="displaynone" type="groupName" name="groupName" value={groupName} />
-                <input className="displaynone" type="name" name="name" value={name} />
-                <input className="displaynone" type="phone" name="phone" value={phone} />
-                <input className="displaynone" type="position" name="position" value={position} />
-                <input className="displaynone" type="number" name="number" value={number} />
-                <input className="displaynone" type="emails" name="emails" value={emails} />
-                <input className="displaynone" type="fullLookAddress" name="fullLookAddress" value={fullLookAddress} />
-                <input className="displaynone" type="address" name="address" value={address} />
-                <input className="displaynone" type="list" name="list" value={list} />
-                <input className="displaynone" type="day" name="day" value={day+days+dayss} />
+                <input className="displaynone" type="text" name="groupName" value={groupName} />
+                <input className="displaynone" type="text" name="name" value={name} />
+                <input className="displaynone" type="text" name="phone" value={phone} />
+                <input className="displaynone" type="text" name="position" value={position} />
+                <input className="displaynone" type="text" name="numbers" value={numbers} />
+                <input className="displaynone" type="text" name="emails" value={emails} />
+                <input className="displaynone" type="text" name="fullLookAddress" value={fullLookAddress} />
+                <input className="displaynone" type="text" name="address" value={address} />
+                <input className="displaynone" type="text" name="list" value={list} />
+                <input className="displaynone" type="text" name="day" value={day+days+dayss} />
 
            
             <div className="title_text fontsizeup">(단체)</div>
@@ -169,7 +169,7 @@ return (
 
                     <div className="Privacy_form Privacy_number title_color">담당자휴대전화</div>
                     <div className="Privacy_form Privacy_number_text">
-                        <input type="text" onChange={(e) => setNumber(e.target.value)}/>
+                        <input type="text" onChange={(e) => setNumbers(e.target.value)}/>
                     </div>
                     <div className="Privacy_form Privacy_email title_color">이메일</div>
                     <div className="Privacy_form Privacy_email_text">

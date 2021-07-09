@@ -30,11 +30,11 @@ function Observe_individual(props) {
     //회사명
     const [company,setCompany] = useState("")
     //부서/직위
-    const [positon,setPositon] = useState("")
+    const [positons,setPositons] = useState("")
     //성별
-    const [gender,setGender] = useState("")
+    const [genders,setGenders] = useState("")
     //연령대
-    const [ages,setAge] = useState("")
+    const [ages,setAges] = useState("")
     //등록분류
     const [classNum,setClassNum] = useState("")
 
@@ -133,6 +133,7 @@ function Observe_individual(props) {
           .then(
             (result) => {
               console.log(result.text);
+              alert("접정상적으로 접수되었습니다.")
               history.push("/sessec");
             },
             (error) => {
@@ -419,8 +420,8 @@ function Observe_individual(props) {
                 <input className="displaynone" type="text" name="addresss" value={addresss} />
                 <input className="displaynone" type="text" name="emails" value={emails} />
                 <input className="displaynone" type="text" name="company" value={company} />
-                <input className="displaynone" type="text" name="positon" value={positon} />
-                <input className="displaynone" type="text" name="gender" value={gender} />
+                <input className="displaynone" type="text" name="positons" value={positons} />
+                <input className="displaynone" type="text" name="genders" value={genders} />
                 <input className="displaynone" type="text" name="ages" value={ages} />
                 <input className="displaynone" type="text" name="classnum" value={classNum} />
                 <input className="displaynone" type="text" name="companycord" value={a+b+c+d+e+f+g+h} />
@@ -483,58 +484,7 @@ function Observe_individual(props) {
                 <input className="displaynone" type="text" name="plus_x8" value={plus_x8} />
                 <input className="displaynone" type="text" name="plus_x9" value={plus_x9} />
 
-
-                <textarea className="displaynone" name="message" readOnly value={
-                    "이름 :"+name+
-                    "\n휴대폰 :"+phone+
-                    "\n주소 :"+fullLookAddress+
-                    "\n상세주소 :"+addresss+
-                    "\n이메일 :"+emails+
-                    "\n회사명 :"+company+
-                    "\n부서/직위 :"+positon+
-                    "\n성별 :"+gender+
-                    "\n연령대 :"+ages+
-                    "\n등록분류 :"+classNum+
-
-                    "\n\n회사분류 :"+a+b+c+d+e+f+g+h+
-                    "\n관람목적 :"+i+j+k+l+m+n+o+
-                    "\n전시회 인지경로 :"+p+q+r+s+t+u+v+
-                    "\n관심분야 :"+w+x+y+z+aa+bb+cc+dd
-                    //" , 제조업체 :"+a+
-                    //" , 유통업체 :"+b+
-                    //" , 관공서/단체/협회 :"+c+
-                    //" , 연구기관 :"+d+
-                    //" , 방송/신문 :"+e+
-                    //" , 무역 :"+f+
-                    //" , 병원/의원 :"+g+
-                    //" , 기타 :"+h
-                    //관람목적
-                    //" , 제품/기술 구매 :"+i+
-                    //" , 자료수집 :"+j+
-                    //" , 시장동향파악 :"+k+
-                    //" , 연구 :"+l+
-                    //" , 협력,투자 및 제휴업체 물색 :"+m+
-                    //" , 기타일반관람 :"+n+
-                    //" , 차기전시참가여부 결정 :"+o+
-                    //전시회 인지경로
-                    //" , TV,신문 등 언론 매체 :"+p+
-                    //" , 관련전문 잡지 :"+q+
-                    //" , 인터넷 :"+r+
-                    //" , 관련기관 및 단체 :"+s+
-                    //" , 참관안내서 :"+t+
-                    //" , 외부광고 :"+u+
-                    //" , 기타 :"+v+
-                    //관심분야
-                    //" , 목재건축 :"+w+
-                    //" , 목제품 :"+x+
-                    //" , 임산물 :"+y+
-                    //" , 신재생에너지 :"+z+
-                    //" , 산림(숲)관리 :"+aa+
-                    //" , 산림레포츠 :"+bb+
-                    //" , 스마트모빌리티 :"+cc+
-                    //" , 기타 :"+dd
-                }/>
-                <div className={"kakaomap "}></div>
+                <div className="kakaomap"></div>
                 <div className="title_text fontsizeup">(개인)</div>
                 < Privacy />
                 <div className="agree_box">
@@ -607,28 +557,28 @@ function Observe_individual(props) {
                     <div className="individual positon">
                         <div className="title">부서/직위</div>
                         <div className="text">
-                            <input type="text" onChange={(e)=> setPositon(e.target.value)}/>
+                            <input type="text" onChange={(e)=> setPositons(e.target.value)}/>
                         </div>
                     </div>
                     <div className="individual gender">
                         <div className="title">성별</div>
                         <div className="text">
-                            <input type="radio" onChange={() => setGender("여성")} name="gender" style={{ marginRight: "5px"}}/> 여성
-                            <input type="radio" onChange={() => setGender("남성")} name="gender" style={{ marginRight: "5px"}}/> 남성
+                            <input type="radio" onChange={() => setGenders("여성")} name="genders" style={{ marginRight: "5px"}}/><span>여성</span>
+                            <input type="radio" onChange={() => setGenders("남성")} name="genders" style={{ marginRight: "5px"}}/><span>남성</span>
                         </div>
                     </div>
                     <div className="individual age">
                         <div className="title">연령대</div>
                         <div className="text">
-                            <div><input onChange={() => setAge("초등학생")} type="radio" name="drone" value="elementary" className="elementary"/> 초등학생</div>
-                            <div><input onChange={() => setAge("중·고등학생")} type="radio" name="drone" value="middles" className="middles"/> 중 · 고등학생</div>
-                            <div><input onChange={() => setAge("20대")} type="radio" name="drone" value="two" className="two"/> 20대</div>
-                            <div><input onChange={() => setAge("30대")} type="radio" name="drone" value="three" className="three"/> 30대</div>
-                            <div><input onChange={() => setAge("40대")} type="radio" name="drone" value="four" className="four"/> 40대</div>
-                            <div><input onChange={() => setAge("50대")} type="radio" name="drone" value="five" className="five"/> 50대</div>
-                            <div><input onChange={() => setAge("60대")} type="radio" name="drone" value="six" className="six"/> 60대</div>
-                            <div><input onChange={() => setAge("70대")} type="radio" name="drone" value="seven" className="seven"/> 70대</div>
-                            <div><input onChange={() => setAge("기타(미취학아동)")} type="radio" name="drone" value="notice" className="notice"/> 기타(미취학아동)</div>
+                            <div><input onChange={() => setAges("초등학생")} type="radio" name="drone" value="elementary" className="elementary"/> 초등학생</div>
+                            <div><input onChange={() => setAges("중·고등학생")} type="radio" name="drone" value="middles" className="middles"/> 중 · 고등학생</div>
+                            <div><input onChange={() => setAges("20대")} type="radio" name="drone" value="two" className="two"/> 20대</div>
+                            <div><input onChange={() => setAges("30대")} type="radio" name="drone" value="three" className="three"/> 30대</div>
+                            <div><input onChange={() => setAges("40대")} type="radio" name="drone" value="four" className="four"/> 40대</div>
+                            <div><input onChange={() => setAges("50대")} type="radio" name="drone" value="five" className="five"/> 50대</div>
+                            <div><input onChange={() => setAges("60대")} type="radio" name="drone" value="six" className="six"/> 60대</div>
+                            <div><input onChange={() => setAges("70대")} type="radio" name="drone" value="seven" className="seven"/> 70대</div>
+                            <div><input onChange={() => setAges("기타(미취학아동)")} type="radio" name="drone" value="notice" className="notice"/> 기타(미취학아동)</div>
                         </div>
                     </div>
                     <div className="individual class">
